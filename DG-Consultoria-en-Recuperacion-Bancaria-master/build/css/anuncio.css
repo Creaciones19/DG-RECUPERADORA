@@ -1,0 +1,943 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    background: linear-gradient(
+        to bottom,
+        #f5e9df 0%,   /* beige superior */
+        #7c004c 100%  /* vino oscuro inferior */
+    );
+    background-attachment: fixed;
+    background-size: cover;
+    color: #FFFFFF;
+}
+
+
+* {
+    font-size: inherit; /* Fuerza que todos los elementos hereden el tamaño del body */
+}
+
+
+
+/* Contenedor del nav en la parte inferior derecha */
+.nav-container {
+    position: absolute;
+    bottom: 10px; /* Ubicación en la parte inferior */
+    right: 10px; /* Alineación a la derecha */
+    transform: translateY(20px); /* Baja el contenedor 20px más */
+    z-index: 10; /* Asegura que esté encima del contenido */
+    padding: 15px; /* Espaciado interno */
+    display: flex;
+    justify-content: center; /* Centra el contenido */
+}
+
+/* Estilo del nav */
+.nav-container .desktop-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px; /* Espaciado entre enlaces */
+}
+
+/* Estilo de los enlaces */
+.nav-container .desktop-nav a {
+    text-decoration: none; /* Sin subrayado */
+    color: #FFFFFF; /* Texto blanco */
+    font-size: 17px; /* Tamaño de letra */
+    padding: 10px 20px; /* Espaciado interno */
+    border-radius: 8px; /* Esquinas redondeadas */
+    background: transparent; /* Fondo transparente */
+    border: none; /* Sin bordes */
+    transition: color 0.3s ease, background-color 0.3s ease; /* Transición suave */
+}
+
+/* Hover sobre los enlaces */
+.nav-container .desktop-nav a:hover {
+       color: #FFFFFF; /* Mantiene el texto blanco */
+}
+
+/* Header */
+header {
+    position: relative;
+    width: 100%;
+    height: 20vh;
+    overflow: hidden;
+}
+
+header video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.header-content {
+    position: relative;
+    text-align: center;
+    color: #FFFFFF;
+    margin-top: 20vh;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+
+
+/* Navegación */
+.navegacion {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.navegacion a {
+    color: #FFFFFF;
+    text-decoration: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+   
+}
+
+.navegacion a:hover {
+    background: linear-gradient(to right, #d86ea3, #7c004c); /* Degradado magenta */
+    color: #FFFFFF; /* Mantiene el texto blanco */
+    transition: background 0.4s ease, color 0.3s ease; /* Transición suave */
+}
+
+/* -------------------------------------------------------------
+   🔹 Este bloque aplica un degradado magenta-vino al pasar
+   el cursor sobre las pestañas del menú de navegación.
+   Mantiene el texto blanco y genera un efecto visual coherente
+   con el diseño general del sitio.
+-------------------------------------------------------------- */
+
+/*
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #ede2d8 85%, #051d40 100%);
+    color: #ffffff; 
+}
+*/
+
+.contenedor {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    text-align: center; /* Centra el contenido */
+}
+
+h1 {
+    font-size: 1.5rem;
+    color:black;
+    margin-bottom: 30px;
+}
+
+.imagen-propiedad {
+    width: 50%;
+    max-width: 100px; /* Limita el tamaño máximo */
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    margin: 0 auto 20px auto; /* Centra la imagen */
+}
+
+.resumen-propiedad {
+    background: linear-gradient(to bottom, #d86ea3, #7c004c); /* Degradado magenta-vino */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    line-height: 1.8;
+    text-align: left; /* Alinea el texto a la izquierda */
+}
+
+/* -------------------------------------------------------------
+   🔹 Este bloque define el estilo del recuadro que resume
+   cada propiedad. El fondo degradado (magenta → vino) crea
+   una apariencia más elegante y coherente con el diseño
+   general del sitio.
+-------------------------------------------------------------- */
+
+.resumen-propiedad .precio {
+    font-size: 2rem;
+    color: black; /* Amarillo para destacar */
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.iconos-caracteristicas {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px;
+    list-style: none;
+    padding: 0;
+}
+
+.iconos-caracteristicas li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.2rem;
+    color: #ffffff;
+    text-align: center;
+    min-width: 60px; /* Asegura que todos los íconos tengan el mismo tamaño */
+}
+
+.iconos-caracteristicas img {
+    width: 40px; /* Tamaño de los íconos */
+    margin-bottom: 5px;
+    filter: invert(1) brightness(2); /* Convierte los íconos SVG a blanco */
+}
+
+.boton-azul-claro {
+    display: inline-block;
+    background-color: #c14882;
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.boton-azul-claro:hover {
+    background: linear-gradient(to right, #d86ea3, #7c004c); /* Degradado magenta elegante */
+    color: #ffffff;
+    transition: background 0.4s ease; /* Transición suave */
+}
+
+/* -------------------------------------------------------------
+   🔹 Este bloque aplica un efecto degradado al pasar el cursor
+   sobre el botón principal. Los tonos magenta (#d86ea3 → #7c004c)
+   armonizan con el diseño del fondo y refuerzan el estilo visual
+   corporativo de la página.
+-------------------------------------------------------------- */
+
+
+/* Ajusta los párrafos */
+.resumen-propiedad p {
+    margin-bottom: 15px;
+    text-indent: 10px; /* Espaciado del texto */
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .iconos-caracteristicas {
+        flex-direction: column;
+    }
+
+    .imagen-propiedad {
+        max-width: 100%; /* Ajusta al ancho completo en pantallas pequeñas */
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .resumen-propiedad .precio {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    .resumen-propiedad {
+        padding: 15px;
+    }
+
+   /*
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #0d203b;
+    color: #ffffff;
+    font-size: 18px;
+    line-height: 1.6;
+    letter-spacing: 0.5px;
+}
+*/
+
+    .contenedor {
+        max-width: 1200px;
+        margin: 20px auto;
+        padding: 20px;
+        text-align: center; /* Centra el contenido */
+    }
+    
+    h1 {
+        font-size: 2.5rem;
+        color: #ffffff;
+        margin-bottom: 30px;
+    }
+    
+    .imagen-propiedad {
+        width: 100%;
+        max-width: 600px; /* Limita el tamaño máximo */
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        margin: 0 auto 20px auto; /* Centra la imagen */
+    }
+    
+    .resumen-propiedad {
+        background-color: #1c2e4a; /* Fondo más oscuro */
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        text-align: left; /* Alinea el texto a la izquierda */
+    }
+    
+    .resumen-propiedad .precio {
+        font-size: 2rem;
+        color: black; /* negro para destacar */
+        margin-bottom: 20px;
+        text-align: center;
+    }
+    
+    .iconos-caracteristicas {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin-bottom: 20px;
+        list-style: none;
+        padding: 0;
+        flex-wrap: wrap; /* Permite que los íconos se ajusten a una sola línea en pantallas pequeñas */
+    }
+    
+    .iconos-caracteristicas li {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 1.2rem;
+        color: #ffffff;
+        text-align: center;
+        flex: 1 1 100px; /* Asegura que todos los íconos tengan el mismo tamaño mínimo */
+    }
+    
+    .iconos-caracteristicas img {
+        width: 40px; /* Tamaño uniforme para todos los íconos */
+        margin-bottom: 5px;
+        filter: invert(1) brightness(2); /* Hace los íconos blancos */
+    }
+    
+    .boton-azul-claro {
+        display: inline-block;
+        background-color: #007BFF;
+        color: #ffffff;
+        padding: 10px 20px;
+        border-radius: 5px;
+        text-decoration: none;
+        font-weight: bold;
+        margin-top: 20px;
+        transition: background-color 0.3s ease;
+    }
+    
+    .boton-azul-claro:hover {
+        background-color: #0056b3;
+    }
+    
+
+
+    
+    /* Responsividad */
+    @media (max-width: 768px) {
+        h1 {
+            font-size: 2rem; /* Reduce el tamaño del título */
+        }
+    
+        .imagen-propiedad {
+            max-width: 100%; /* Ajusta al ancho completo en pantallas pequeñas */
+        }
+    
+        .resumen-propiedad .precio {
+            font-size: 1.8rem;
+        }
+    
+        .iconos-caracteristicas {
+            flex-direction: row;
+            gap: 10px; /* Reduce el espacio entre íconos */
+        }
+    
+        .iconos-caracteristicas li {
+            flex: 1 1 80px; /* Ajusta el tamaño en pantallas más pequeñas */
+        }
+    }
+    
+    @media (max-width: 480px) {
+        h1 {
+            font-size: 1.8rem; /* Ajusta el título para pantallas muy pequeñas */
+        }
+    
+        .resumen-propiedad {
+            padding: 15px;
+        }
+    
+        .iconos-caracteristicas {
+            flex-direction: row;
+            gap: 5px; /* Reduce el espacio entre íconos */
+        }
+    
+        .iconos-caracteristicas li {
+            flex: 1 1 70px; /* Ajusta el tamaño para pantallas muy pequeñas */
+        }
+    
+        .boton-azul-claro {
+            font-size: 0.9rem; /* Ajusta el tamaño del botón */
+            padding: 8px 15px;
+        }
+    }
+}     
+
+/* Menú Móvil */
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background: linear-gradient(to bottom,
+        #7c004c 0%,    /* vino elegante arriba */
+        #9b5476 60%,   /* vino medio */
+        #d0cfd0 100%   /* gris metálico claro abajo */
+    );
+    z-index: 1000;
+    transition: left 0.3s ease;
+}
+
+.mobile-nav a:hover {
+    background: linear-gradient(to bottom,
+        #9b5476 0%,    /* vino medio arriba */
+        #d0cfd0 100%   /* gris metálico abajo */
+    );
+    color: #ffffff;
+    border-radius: 8px;
+    transition: all 0.4s ease;
+}
+
+.mobile-menu.active {
+    left: 0;
+}
+
+.mobile-menu .close-icon {
+    font-size: 20px;
+    align-self: flex-end;
+    cursor: pointer;
+    padding: 20px;
+}
+
+.mobile-nav a {
+    text-decoration: none;
+    color: white;
+    display: block;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    header .menu-icon {
+        display: block;
+    }
+
+    header .desktop-nav {
+        display: none;
+    }
+
+    .nav-container {
+        display: none;
+    }
+
+    .header-content {
+        align-items: center;
+        padding-left: 0;
+        text-align: center;
+    }
+
+    .navegacion {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .navegacion a {
+        width: 80%;
+        text-align: center;
+    }
+}
+
+/* Estilo del botón flotante de WhatsApp */
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px; /* Espaciado desde abajo */
+    right: 100px; /* Ajuste de posición para evitar superposición */
+    z-index: 1001; /* Asegurar que esté sobre otros elementos */
+    width: 60px; /* Tamaño del botón */
+    height: 60px;
+    background-color: #25d366;
+    border-radius: 50%; /* Forma circular */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    animation: float-whatsapp 2s infinite;
+    cursor: pointer;
+}
+
+/* Ícono de WhatsApp */
+.whatsapp-float img {
+    width: 35px;
+    height: 35px;
+}
+
+/* Animación flotante específica de WhatsApp */
+@keyframes float-whatsapp {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Botón flotante del formulario */
+.formulario-float {
+    position: fixed;
+    bottom: 20px;
+    right: 90px; /* Ajuste para evitar superposición */
+    z-index: 1000;
+    width: 60px;
+    height: 60px;
+    background-color: #007BFF;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    animation: float-formulario 2s infinite;
+    cursor: pointer;
+}
+
+/* Ícono del formulario */
+.formulario-float img {
+    width: 30px;
+    height: 30px;
+}
+
+/* Animación flotante específica del formulario */
+@keyframes float-formulario {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Botón flotante para llamadas */
+.llamar-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px; /* Ajuste de posición */
+    z-index: 1000;
+    width: 60px;
+    height: 60px;
+    background-color: #25D366;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    animation: float-llamar 2s infinite;
+    cursor: pointer;
+}
+
+/* Ícono de llamada */
+.llamar-float img {
+    width: 30px;
+    height: 30px;
+}
+
+/* Animación flotante específica para llamada */
+@keyframes float-llamar {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.navegacion-float {
+    position: fixed;
+    bottom: 20px; /* Ajusta según tu diseño */
+    padding: 10px;
+    background-color:#ede2d8; /* Fondo azul */
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    z-index: 9999;
+}
+
+.navegacion-float img {
+    width: 24px;
+    height: 24px;
+}
+
+.atras-float {
+   left: 80px; /* Posición a la izquierda del botón principal */
+}
+
+.adelante-float {
+   left: 20px; /* Posición a la derecha */
+}
+
+.navegacion-float:hover {
+    background-color:#ede2d8; /* Azul más oscuro en hover */
+    transform: scale(1.1); /* Aumenta ligeramente el tamaño */
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    background: linear-gradient(
+        to bottom,
+        #f5e9df 0%,   /* beige superior */
+        #7c004c 100%  /* vino oscuro inferior */
+    );
+    background-attachment: fixed;
+    background-size: cover;
+    color: #FFFFFF;
+}
+
+/* -------------------------------------------------------------
+   🔹 Este bloque define el diseño visual del fondo principal,
+   incluyendo el degradado beige → magenta y la imagen SVG.
+   Se aplica desde la parte superior hasta el footer de la página.
+-------------------------------------------------------------- */
+
+/* 🔸 Estilo del título principal */
+h1 {
+    color: black; /* Vino para destacar sobre el fondo claro */
+    text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+}
+
+/* 🔸 Estilo del botón principal */
+.boton-azul-claro {
+    display: inline-block;
+    background: linear-gradient(to right, #d86ea3, #7c004c);
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+.boton-azul-claro:hover {
+    background: linear-gradient(to right, #7c004c, #d86ea3);
+}
+header .nav-container .desktop-nav a:hover {
+    background: linear-gradient(to bottom,
+        #7c004c 0%,    /* vino elegante arriba */
+        #9b5476 60%,   /* vino medio */
+        #d0cfd0 100%   /* gris metálico claro abajo */
+    ) !important;
+    color: #ffffff !important;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3) !important;
+    transform: translateY(-2px) !important;
+    transition: all 0.4s ease !important;
+}
+footer .navegacion a:hover {
+    background: linear-gradient(to bottom,
+        #7c004c 0%,    /* vino elegante arriba */
+        #9b5476 60%,   /* vino medio */
+        #d0cfd0 100%   /* gris metálico claro abajo */
+    ) !important;
+    color: #ffffff !important;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3) !important;
+    transform: translateY(-2px) !important;
+    transition: all 0.4s ease !important;
+}
+
+/* 🔹 Contenedor fijo de 2 columnas */
+.galeria-amado-nervo {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  max-width: 1000px;
+  margin: 0 auto 40px auto;
+  justify-items: center;
+  align-items: stretch;
+}
+
+/* 🔹 Cada bloque picture */
+.galeria-amado-nervo picture {
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* 🔹 Imágenes */
+.galeria-amado-nervo img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  display: block;
+}
+
+/* 🔹 Efecto hover */
+.galeria-amado-nervo picture:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+
+/* 📱 En móvil: 1 imagen por fila */
+@media (max-width: 768px) {
+  .galeria-amado-nervo {
+    grid-template-columns: 1fr;
+  }
+
+}
+.galeria-amado-nervo picture.ultimo {
+  grid-column: 1 / -1;
+}
+
+.iconos-caracteristicas {
+  display: flex; /* Los pone en línea */
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente los iconos con los textos */
+  gap: 40px; /* Espacio entre cada icono */
+  list-style: none; /* Quita los puntos de la lista */
+  padding: 0;
+  margin: 20px 0;
+}
+
+.iconos-caracteristicas li {
+  text-align: center;
+}
+
+.iconos-caracteristicas .icono {
+  width: 50px; /* Tamaño del ícono */
+  height: 50px;
+  display: block;
+  margin: 0 auto 5px auto; /* Centra cada imagen */
+  filter: brightness(100%); /* Mantiene colores claros si hay fondo oscuro */
+}
+
+/* =============================
+   GENERAL FOOTER STYLES
+============================= */
+/*seccion arriba del footer*/
+.seccion-video {
+    position: relative;
+    width: 100%;
+    height: 45vh; /* ⭐ AJUSTA EL TAMAÑO DEL VIDEO: pon 35vh, 40vh, 50vh según lo que quieras */
+    overflow: hidden;
+}
+
+.seccion-video video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.seccion-video {
+    position: relative;
+    width: 100%;
+    height: 45vh; /* ⭐ AJUSTA EL TAMAÑO DEL VIDEO: pon 35vh, 40vh, 50vh según lo que quieras */
+    overflow: hidden;
+}
+
+.seccion-video video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.texto-video {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    text-align: center;
+    color: white;
+    z-index: 10;
+}
+
+.texto-video h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    text-shadow: 0 0 8px rgba(0,0,0,0.7);
+    color: #FF1493;
+}
+
+.links-oficinas {
+    display: flex;
+    justify-content: center;
+    gap: 200px;
+}
+
+.links-oficinas a h2,
+.links-oficinas a h3 {
+    color: #FF1493 !important;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+}
+/* =======================================
+   RESPONSIVE — SECCIÓN VIDEO + TEXTOS
+======================================= */
+
+/* 📱 CELULAR (0–480px) */
+@media (max-width: 480px) {
+
+    .seccion-video {
+        height: 30vh; /* Más pequeño para cel */
+    }
+
+    .texto-video h1 {
+        font-size: 1.6rem;
+        margin-bottom: 10px;
+    }
+
+    .links-oficinas {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .links-oficinas a h2,
+    .links-oficinas a h3 {
+        font-size: 1.1rem;
+    }
+}
+
+/* 📱 TABLET (481–768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+
+    .seccion-video {
+        height: 35vh;
+    }
+
+    .texto-video h1 {
+        font-size: 2.2rem;
+    }
+
+    .links-oficinas {
+        gap: 60px;
+    }
+
+    .links-oficinas a h2,
+    .links-oficinas a h3 {
+        font-size: 1.4rem;
+    }
+}
+
+/* 🖥️ LAPTOP / PC (769–1200px) */
+@media (min-width: 769px) and (max-width: 1200px) {
+
+    .seccion-video {
+        height: 40vh;
+    }
+
+    .texto-video h1 {
+        font-size: 2.6rem;
+    }
+
+    .links-oficinas {
+        gap: 150px;
+    }
+}
+
+
+footer {
+   background: linear-gradient(
+        to bottom,
+        #2A2A2D,   /* gris profundo */
+        #5A0033    /* guinda oscuro */
+    );
+    padding: 20px 0;
+    color: white;
+    text-align: center;
+}
+
+footer .navegacion {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding-bottom: 10px;
+}
+
+footer .navegacion a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+footer .correo {
+    display: block;
+    margin-top: 10px;
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+}
+/* =======================================
+   RESPONSIVE — FOOTER
+======================================= */
+
+/* 📱 CELULAR (0–480px) */
+@media (max-width: 480px) {
+
+    footer {
+        padding: 15px 0;
+    }
+
+    footer .navegacion {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    footer .navegacion a {
+        font-size: 1rem;
+    }
+
+    footer .correo {
+        font-size: 1rem;
+    }
+}
+
+/* 📱 TABLET (481–768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+
+    footer .navegacion {
+        gap: 15px;
+    }
+
+    footer .navegacion a {
+        font-size: 1.05rem;
+    }
+
+    footer .correo {
+        font-size: 1.05rem;
+    }
+}
+
+/* 🖥️ LAPTOP (769–1200px) */
+@media (min-width: 769px) and (max-width: 1200px) {
+
+    footer .navegacion a {
+        font-size: 1.1rem;
+    }
+}
