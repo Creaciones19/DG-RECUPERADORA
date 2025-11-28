@@ -12,6 +12,24 @@ body {
     font-size: inherit; /* Fuerza que todos los elementos hereden el tamaño del body */
 }
 
+/* Fondo azul que envuelve todas las tarjetas */
+.tarjetas-fondo-azul {
+    background-color: #001f3f; /* azul marino oscuro */
+    padding: 40px 20px;
+    border-radius: 10px;       /* opcional: bordes redondeados */
+    display: flex;
+    flex-direction: column;
+    gap: 20px;                 /* espacio entre tarjetas */
+}
+
+/* Tarjetas individuales */
+.tarjeta {
+    display: flex;
+    background-color: #F8F9FA; /* blanco */
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
 
 
 /* Contenedor del nav en la parte inferior derecha */

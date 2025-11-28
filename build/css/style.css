@@ -27,6 +27,154 @@ h1:hover {
     transition: all 0.3s ease;
 }
 
+/* tarjetas que van en la pagian seguridad  ajsusada y modificada*/
+
+.contenedor-tarjetas {
+    background-color: #001f3f; /* azul marino */
+    padding: 50px 20px; /* espacio interno */
+}
+.contenedor-tarjetas {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* para que bajen a otra línea si no caben */
+    gap: 20px; /* espacio entre tarjetas */
+    background-color: #001f3f;
+    padding: 50px 20px;
+}
+/* Definimos la animación de parpadeo */
+/* Animación de parpadeo */
+@keyframes parpadeo {
+    0%, 50%, 100% { opacity: 1; }
+    25%, 75% { opacity: 0.5; }
+}
+
+/* Links dentro de .texto-entrada: azul marino siempre */
+.texto-entrada a {
+    color: #001f3f !important; /* fuerza azul marino */
+    text-decoration: underline;
+    cursor: pointer;
+    animation: parpadeo 1s infinite;
+    transition: transform 0.2s, color 0.2s;
+}
+
+/* Hover opcional: cambia a color más brillante al pasar mouse */
+.texto-entrada a:hover {
+    color: #0056b3 !important;  /* azul claro al pasar el mouse */
+    transform: scale(1.05);
+}
+
+/* TARJETAS */
+
+.entrada-blog {
+    background: #0a1a2a; /* azul marino */
+    color: #fff;
+    border-radius: 15px;
+    max-width: 340px;
+    width: 100%;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* HOVER */
+.entrada-blog:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+/* Imagen completa */
+.entrada-blog .imagen img {
+    width: 100%;
+    display: block;
+}
+
+/* Texto interno */
+.texto-entrada {
+    padding: 20px;
+}
+
+.texto-entrada h4 a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.25rem;
+}
+
+.texto-entrada h4 a:hover {
+    color: #66baff;
+}
+
+.texto-entrada p {
+    margin-top: 10px;
+    color: #e5e5e5;
+}
+.intro-seguridad ul {
+    color: #0a1a2a; /* azul marino */
+}
+
+.intro-seguridad ul strong {
+    color: #0a1a2a; /* mismo azul marino */
+}
+
+/* CONTENEDOR */
+.contenedor-tarjetas {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 40px auto;
+    flex-wrap: wrap;
+}
+
+/* TARJETAS */
+.entrada-blog {
+    background: linear-gradient(to right, #71d86b, #1585d8); /* 💚💙 degradado nuevo */
+    color: #fff;
+    border-radius: 15px;
+    max-width: 340px;
+    width: 100%;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* HOVER */
+.entrada-blog:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+/* Imagen ajustada y recortada correctamente */
+.entrada-blog .imagen {
+    width: 100%;
+    height: 180px; /* Ajusta al gusto */
+    overflow: hidden;
+}
+
+.entrada-blog .imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    display: block;
+}
+
+/* Texto */
+.texto-entrada {
+    padding: 20px;
+}
+
+.texto-entrada h4 a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.25rem;
+}
+
+.texto-entrada h4 a:hover {
+    color: #66baff;
+}
+
+.texto-entrada p {
+    margin-top: 10px;
+    color: #e5e5e5;
+}
 
 
 
@@ -816,6 +964,11 @@ blockquote {
     text-align: center;
     margin-top: 40px;
 }
+.fondo-azul-testimoniales {
+    background-color: #001f3f; /* azul marino oscuro */
+    padding: 40px 20px;        /* espacio interno */
+    border-radius: 10px;       /* opcional */
+}
 
 /* 🎨 Tarjetas de testimonio */
 .testimoniales .testimonial {
@@ -870,6 +1023,15 @@ blockquote {
     font-weight: bold;
     color: #000000;
     margin-top: 8px; /* 🔹 AQUI TERMINA TESTIMONIOS */
+}
+.titulo-cesiones {
+    font-family: 'Brush Script MT', 'Lucida Handwriting', cursive; /* estilo manuscrita */
+    font-size: 3rem;             /* grande para destacar como título */
+    color: black;                /* color negro */
+    font-weight: normal;         /* manuscritas no suelen ir en negrita */
+    text-align: center;          /* centrado */
+    margin-bottom: 30px;         /* espacio debajo del título */
+    letter-spacing: 1px;         /* espaciado entre letras */
 }
 
 /* AQUI INICIA TARJETAS DE INDEX.HTML */
@@ -1129,13 +1291,32 @@ blockquote {
     margin-top: 60px;
     margin-bottom: 60px;
 }
+.fondo-cesiones {
+    background-color: #001f3f; /* azul marino sólido */
+    padding: 40px 20px;        /* espacio interno */
+    border-radius: 10px;       /* bordes redondeados opcionales */
+}
+
+.fondo-cesiones .titulo-cesiones {
+    color: #fff;               /* título en blanco para que resalte sobre el fondo */
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.fondo-cesiones .galeria-cesiones img {
+    border-radius: 10px;       /* opcional: bordes redondeados para las imágenes */
+    margin: 0 10px;            /* espacio entre imágenes */
+}
 
 /* 🔹 Título (ahora en negro) */
 .titulo-cesiones {
-    font-size: 1.8rem;
-    color: black; /* cambiado de #7c004c a negro */
-    font-weight: bold;
-    margin-bottom: 25px;
+    font-family: 'Brush Script MT', 'Lucida Handwriting', cursive; /* estilo manuscrita */
+    font-size: 3rem;             /* grande para destacar como título */
+    color: black;                /* color negro */
+    font-weight: normal;         /* manuscritas no suelen ir en negrita */
+    text-align: center;          /* centrado */
+    margin-bottom: 30px;         /* espacio debajo del título */
+    letter-spacing: 1px;         /* opcional: espaciado entre letras */
 }
 
 /* 🔹 Galería ordenada */
@@ -1539,6 +1720,10 @@ background: conic-gradient(#1585d8 0deg 360deg);
     font-size: 26px;
     transition: transform 0.3s, background 0.3s;
 }
+/* Mantiene los íconos derechos aunque el aro gire */
+.capa-rotatoria .icono {
+    transform: rotate(calc(-1 * var(--rotacion, 0deg)));
+}
 
 /* ===== EFECTO ICONO ACTIVO ===== */
 .icono.activo {
@@ -1840,7 +2025,137 @@ background: conic-gradient(#1585d8 0deg 360deg);
     .beneficios-texto h3 { font-size: 16px; }
     .beneficios-texto p  { font-size: 12px; line-height: 16px; }
 }
-/*seccion arriba del footer*/
+
+/*seccion de final de la pagina de contacto*/
+/* SECCIÓN 50/50 */
+/* SECCIÓN SEGURIDAD */
+.seguridad-section {
+    display: flex;
+    width: 100%;
+    min-height: 600px;
+    background: #0A0F28;
+    padding: 60px 0 100px 0; /* 🔥 espacio extra abajo para separar del footer */
+}
+
+/* IMAGEN IZQUIERDA */
+.seguridad-imagen {
+    flex: 1;
+    min-height: 420px; 
+    background: linear-gradient(rgba(10,15,40,0.45), rgba(10,15,40,0.45)),
+                url('../img/imagencontactar.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* CONTENIDO */
+.seguridad-contenido {
+    flex: 1;
+    padding: 60px 50px;
+    color: #ffffff !important; /* 🔥 forzar blanco */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* TÍTULO */
+.seguridad-contenido h2 {
+    font-size: 40px;
+    font-weight: 800;
+    margin-bottom: 20px;
+    color: #ffffff !important; /* 🔥 forzar blanco */
+}
+
+.seguridad-contenido h2 span {
+    color: #ffb400 !important; /* 🔥 Amarillo correcto */
+}
+
+/* PÁRRAFO PRINCIPAL */
+.seguridad-contenido .intro {
+    font-size: 18px;
+    margin-bottom: 40px;
+    line-height: 1.6;
+    color: #ffffff !important; /* 🔥 Forzar blanco */
+}
+
+/* ITEMS */
+.seguridad-items {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px 30px;
+}
+
+/* TÍTULO DE CADA ITEM (AMARILLO) */
+.item h3 {
+    color: #ffb400 !important;
+    margin-bottom: 5px;
+}
+
+/* PÁRRAFO DE ÍTEM -> DEBE SER BLANCO */
+.item p {
+    color: #ffffff !important;
+}
+
+/* CHECK MARK */
+.check {
+    font-size: 38px;
+    line-height: 1;
+    margin-bottom: 10px;
+    color: #ffffff !important;
+}
+
+/* ------------------------ */
+/* RESPONSIVE TABLET */
+/* ------------------------ */
+@media (max-width: 992px) {
+    .seguridad-section {
+        flex-direction: column;
+    }
+
+    .seguridad-imagen {
+        height: 350px;
+    }
+
+    .seguridad-contenido {
+        padding: 40px 30px;
+    }
+
+    .seguridad-contenido h2 {
+        font-size: 32px;
+    }
+
+    .seguridad-items {
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+}
+
+/* ------------------------ */
+/* RESPONSIVE CELULAR */
+/* ------------------------ */
+@media (max-width: 600px) {
+    .seguridad-items {
+        grid-template-columns: 1fr;
+    }
+
+    .seguridad-contenido h2 {
+        font-size: 28px;
+    }
+
+    .intro {
+        font-size: 16px;
+    }
+
+    .check {
+        font-size: 32px;
+    }
+}
+.seguridad-section {
+    margin-bottom: 80px !important;
+}
+
+
+/*aqui inica la seccion de video que esta arriba del footer y footer*/
 .seccion-video {
     position: relative;
     width: 100%;
