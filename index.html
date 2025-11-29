@@ -491,7 +491,9 @@ function girarAro() {
     document.querySelector(".capa-rotatoria").style.transform =
         "rotate(" + rotacion + "deg)";
 
-        
+        document.querySelectorAll(".icono").forEach(icono => {
+        icono.style.transform = "rotate(" + (-rotacion) + "deg)";
+    });  // === esta seccion hace que nunca se ponda de cabeza los iconos  ===
     // === Mantener los iconos derechos ===
     document.documentElement.style.setProperty("--rotacion", rotacion + "deg");
 }
