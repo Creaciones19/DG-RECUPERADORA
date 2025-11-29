@@ -1588,9 +1588,9 @@ label[for="mensaje"] {
     color: white;
     font-family: Arial, sans-serif;
 
-    width: 100vw;          /* ancho real de la ventana */
-    margin-left: calc(50% - 50vw);  /* truco para romper el contenedor */
-    margin-right: calc(50% - 50vw); /* y ocupar todo el ancho real */
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
 
     position: relative;
 }
@@ -1615,10 +1615,11 @@ label[for="mensaje"] {
     flex: 1;
     display: flex;
     flex-direction: column;
-    align-items: center;   /* Centra horizontalmente */
-    justify-content: center; /* Centra verticalmente */
+    align-items: center;
+    justify-content: center;
     text-align: center;
 }
+
 .beneficios-titulo,
 .beneficios-subtitulo {
     text-align: center;
@@ -1628,14 +1629,14 @@ label[for="mensaje"] {
     font-size: 60px;
     font-weight: 800;
     margin: 0;
-    color: white; /* <- texto en blanco */
+    color: white;
 }
 
 .beneficios-subtitulo {
     font-size: 26px;
     margin-top: -10px;
     opacity: 0.8;
-    color: white; /* <- texto en blanco */
+    color: white;
 }
 
 /* ===== CÍRCULO ===== */
@@ -1646,7 +1647,6 @@ label[for="mensaje"] {
     margin-top: 40px;
 }
 
-/* ===== Z–INDEX FIX ===== */
 /* ===== Z–INDEX FIX ===== */
 .aro-externo { z-index: 1; }
 .circulo-central { z-index: 2; }
@@ -1661,35 +1661,28 @@ label[for="mensaje"] {
     position: absolute;
     top: 0;
     left: 0;
+    padding: 7px;
 
-    /* Grosor del aro */
-    padding: 7px; /* equivalente al grosor del borde anterior */
+    background: conic-gradient(#1585d8 0deg 360deg);
 
-    /* ANILLO CASI COMPLETO */
-background: conic-gradient(#1585d8 0deg 360deg);
-
-
-    /* Máscara para convertir el fondo en un anillo */
     -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 7px), black calc(100% - 7px));
     mask: radial-gradient(farthest-side, transparent calc(100% - 7px), black calc(100% - 7px));
 
     transform-origin: center center;
-    animation: girar 30s linear infinite;   /* gira cada 5 segundos */
-
+    animation: girar 30s linear infinite;
 }
 
 @keyframes girar {
     from { transform: rotate(0deg); }
     to   { transform: rotate(360deg); }
-    
 }
+
 .aro-con-iconos {
     position: absolute;
     width: 100%;
     height: 100%;
     top: 0;
     left: 0;
-
     animation: girar 30s linear infinite;
     transform-origin: center center;
 }
@@ -1720,7 +1713,7 @@ background: conic-gradient(#1585d8 0deg 360deg);
     font-size: 26px;
     transition: transform 0.3s, background 0.3s;
 }
-/* Mantiene los íconos derechos aunque el aro gire */
+
 .capa-rotatoria .icono {
     transform: rotate(calc(-1 * var(--rotacion, 0deg)));
 }
@@ -1733,26 +1726,19 @@ background: conic-gradient(#1585d8 0deg 360deg);
     filter: drop-shadow(0 0 6px gold);
 }
 
-/* === POSICIONES DE LOS ICONOS (CORREGIDAS) === */
-/* === POSICIONES DE LOS ICONOS (CORRECTAS) === */
-/* === POSICIONES DE LOS ICONOS (CORREGIDAS Y PERFECTAMENTE ALINEADAS) === */
-.icono-1 { top: -27px; left: 162px; }       /* Arriba exacto */
-.icono-2 { top: 162px; right: -27px; }      /* Derecha exacto */
-.icono-3 { bottom: -27px; left: 162px; }    /* Abajo exacto */
-
-/* Izquierda (dos posiciones) — valores corregidos */
+/* === POSICIONES DE LOS ICONOS === */
+.icono-1 { top: -27px; left: 162px; }
+.icono-2 { top: 162px; right: -27px; }
+.icono-3 { bottom: -27px; left: 162px; }
 .icono-4 { top: 62px; left: -10px; }
-
-     /* Izquierda-arriba */
-.icono-5 { top: 257px; left: -16px; }     /* Izquierda-abajo */
+.icono-5 { top: 257px; left: -16px; }
 
 /* ===== TEXTO CENTRAL ===== */
 .beneficios-texto {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translat
-    e(-50%, -50%);
+    transform: translate(-50%, -50%);
     width: 240px;
     text-align: center;
 }
@@ -1771,8 +1757,8 @@ background: conic-gradient(#1585d8 0deg 360deg);
 
 /* ===== BOTÓN ===== */
 .beneficios-boton {
-    display: block;                 /* ← para centrar correctamente */
-    margin: 60px auto 0 auto;       /* ← separa el botón del aro */
+    display: block;
+    margin: 60px auto 0 auto;
     padding: 14px 28px;
     background: linear-gradient(to right, #71d86b, #1585d8);
     color: white;
@@ -1782,7 +1768,6 @@ background: conic-gradient(#1585d8 0deg 360deg);
 }
 
 /* ===== COLUMNA DERECHA ===== */
-/* ===== DESKTOP (base) ===== */
 .beneficios-der {
     flex: 1.2;
     display: flex;
@@ -1798,6 +1783,7 @@ background: conic-gradient(#1585d8 0deg 360deg);
     max-width: none;
     border-radius: 0;
 }
+
 .beneficios-circulo {
     position: relative;
 }
@@ -1817,6 +1803,7 @@ background: conic-gradient(#1585d8 0deg 360deg);
     left: 50%;
     transform: translate(-50%, -50%);
 }
+
 .beneficios-texto {
     position: absolute;
     top: 50%;
@@ -1824,336 +1811,166 @@ background: conic-gradient(#1585d8 0deg 360deg);
     transform: translate(-50%, -50%);
 }
 
-/* ===== TABLET: hasta 1024px ===== */
-@media screen and (max-width: 1024px) {
-    .beneficios-der {
-        flex: 1;           /* ocupar todo el ancho disponible */
-        margin-top: 20px;  /* separa un poco del contenido superior si quieres */
-        justify-content: center;
-    }
-
-    .beneficios-der img {
-        width: 100%;
-        height: auto;      /* mantiene proporción */
-    }
-}
-
-/* ===== MÓVIL: hasta 768px ===== */
-@media screen and (max-width: 768px) {
-    .beneficios-der {
-        flex: 1;
-        margin-top: 15px;
-        justify-content: center;
-    }
-
-    .beneficios-der img {
-        width: 100%;
-        height: auto;
-    }
-}
-
-/* ===== PEQUEÑOS MÓVILES: hasta 480px ===== */
-@media screen and (max-width: 480px) {
-    .beneficios-der {
-        flex: 1;
-        margin-top: 10px;
-        justify-content: center;
-    }
-
-    .beneficios-der img {
-        width: 100%;
-        height: auto;
-    }
-}
-
-/* ===== RESPONSIVE PARA TABLET Y MÓVILES ===== */
-
-/* Tablet: pantallas hasta 1024px */
-@media screen and (max-width: 1024px) {
-    .beneficios-contenedor {
-        flex-direction: column;
-        gap: 40px;
-    }
-
-    .beneficios-izq {
-        width: 100%;
-        text-align: center;
-    }
-
-    .beneficios-circulo {
-        width: 300px;
-        height: 300px;
-        margin-top: 30px;
-    }
-
-    .aro-externo {
-        width: 300px;
-        height: 300px;
-        padding: 5px;
-    }
-
-    .circulo-central {
-        width: 200px;
-        height: 200px;
-    }
-
-    .icono {
-        width: 45px;
-        height: 45px;
-        font-size: 22px;
-    }
-
-    .icono-1 { top: -20px; left: 120px; }
-    .icono-2 { top: 120px; right: -20px; }
-    .icono-3 { bottom: -20px; left: 120px; }
-    .icono-4 { top: 50px; left: -8px; }
-    .icono-5 { top: 210px; left: -12px; }
-
-    .beneficios-titulo { font-size: 48px; }
-    .beneficios-subtitulo { font-size: 22px; }
-
-    .beneficios-boton { font-size: 16px; padding: 12px 24px; }
-}
-
-/* Móvil: pantallas hasta 768px */
-@media screen and (max-width: 768px) {
-    .beneficios-contenedor {
-        flex-direction: column;
-        gap: 30px;
-    }
-
-    .beneficios-circulo {
-        width: 250px;
-        height: 250px;
-        margin-top: 20px;
-    }
-
-    .aro-externo {
-        width: 250px;
-        height: 250px;
-        padding: 4px;
-    }
-
-    .circulo-central {
-        width: 160px;
-        height: 160px;
-    }
-
-    .icono {
-        width: 40px;
-        height: 40px;
-        font-size: 20px;
-    }
-
-    .icono-1 { top: -18px; left: 100px; }
-    .icono-2 { top: 100px; right: -18px; }
-    .icono-3 { bottom: -18px; left: 100px; }
-    .icono-4 { top: 42px; left: -6px; }
-    .icono-5 { top: 175px; left: -10px; }
-
-    .beneficios-titulo { font-size: 36px; }
-    .beneficios-subtitulo { font-size: 18px; }
-
-    .beneficios-boton { font-size: 14px; padding: 10px 20px; }
-}
-
-/* Pequeñas pantallas: hasta 480px */
-@media screen and (max-width: 480px) {
-    .beneficios-circulo {
-        width: 200px;
-        height: 200px;
-        margin-top: 15px;
-    }
-
-    .aro-externo {
-        width: 200px;
-        height: 200px;
-        padding: 3px;
-    }
-
-    .circulo-central {
-        width: 130px;
-        height: 130px;
-    }
-
-    .icono {
-        width: 35px;
-        height: 35px;
-        font-size: 18px;
-    }
-
-    .icono-1 { top: -15px; left: 80px; }
-    .icono-2 { top: 80px; right: -15px; }
-    .icono-3 { bottom: -15px; left: 80px; }
-    .icono-4 { top: 35px; left: -5px; }
-    .icono-5 { top: 140px; left: -8px; }
-
-    .beneficios-titulo { font-size: 28px; }
-    .beneficios-subtitulo { font-size: 16px; }
-
-    .beneficios-boton { font-size: 12px; padding: 8px 16px; }
-}
-/* Tablet: pantallas hasta 1024px */
-@media screen and (max-width: 1024px) {
-    .beneficios-texto {
-        width: 70%;       /* proporcional al círculo */
-        max-width: 180px; /* no sobrepasa el círculo */
-    }
-
-    .beneficios-texto h3 { font-size: 20px; }
-    .beneficios-texto p  { font-size: 14px; line-height: 20px; }
-}
-
-/* Móvil: pantallas hasta 768px */
-@media screen and (max-width: 768px) {
-    .beneficios-texto {
-        width: 70%;
-        max-width: 150px;
-    }
-
-    .beneficios-texto h3 { font-size: 18px; }
-    .beneficios-texto p  { font-size: 13px; line-height: 18px; }
-}
-
-/* Pequeñas pantallas: hasta 480px */
-@media screen and (max-width: 480px) {
-    .beneficios-texto {
-        width: 70%;
-        max-width: 120px;
-    }
-
-    .beneficios-texto h3 { font-size: 16px; }
-    .beneficios-texto p  { font-size: 12px; line-height: 16px; }
-}
-
-/*seccion de final de la pagina de contacto*/
-/* SECCIÓN 50/50 */
-/* SECCIÓN SEGURIDAD */
+/* ==== SECCIÓN SEGURIDAD ==== */
 .seguridad-section {
     display: flex;
     width: 100%;
     min-height: 600px;
     background: #0A0F28;
-    padding: 60px 0 100px 0; /* 🔥 espacio extra abajo para separar del footer */
+    padding: 60px 0 100px 0;
 }
 
-/* IMAGEN IZQUIERDA */
 .seguridad-imagen {
     flex: 1;
-    min-height: 420px; 
+    min-height: 420px;
     background: linear-gradient(rgba(10,15,40,0.45), rgba(10,15,40,0.45)),
-                url('../img/imagencontactar.png');
+    url('../img/imagencontactar.png');
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
 }
 
-/* CONTENIDO */
 .seguridad-contenido {
     flex: 1;
     padding: 60px 50px;
-    color: #ffffff !important; /* 🔥 forzar blanco */
+    color: #ffffff !important;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-/* TÍTULO */
 .seguridad-contenido h2 {
     font-size: 40px;
     font-weight: 800;
     margin-bottom: 20px;
-    color: #ffffff !important; /* 🔥 forzar blanco */
+    color: #ffffff !important;
 }
 
 .seguridad-contenido h2 span {
-    color: #ffb400 !important; /* 🔥 Amarillo correcto */
+    color: #ffb400 !important;
 }
 
-/* PÁRRAFO PRINCIPAL */
 .seguridad-contenido .intro {
     font-size: 18px;
     margin-bottom: 40px;
     line-height: 1.6;
-    color: #ffffff !important; /* 🔥 Forzar blanco */
+    color: #ffffff !important;
 }
 
-/* ITEMS */
 .seguridad-items {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 25px 30px;
 }
 
-/* TÍTULO DE CADA ITEM (AMARILLO) */
 .item h3 {
     color: #ffb400 !important;
     margin-bottom: 5px;
 }
 
-/* PÁRRAFO DE ÍTEM -> DEBE SER BLANCO */
 .item p {
     color: #ffffff !important;
 }
 
-/* CHECK MARK */
 .check {
     font-size: 38px;
     line-height: 1;
     margin-bottom: 10px;
     color: #ffffff !important;
 }
+/*responsive  de codigo de aro , ciruclo e iamgen  de index*/
+@media (max-width: 1024px) {
 
-/* ------------------------ */
-/* RESPONSIVE TABLET */
-/* ------------------------ */
-@media (max-width: 992px) {
-    .seguridad-section {
+    .beneficios-contenedor {
         flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 60px;
     }
 
-    .seguridad-imagen {
-        height: 350px;
+    .beneficios-der {
+        justify-content: center;
+        width: 100%;
     }
 
-    .seguridad-contenido {
-        padding: 40px 30px;
-    }
-
-    .seguridad-contenido h2 {
-        font-size: 32px;
-    }
-
-    .seguridad-items {
-        grid-template-columns: 1fr 1fr;
-        gap: 20px;
+    .beneficios-der img {
+        width: 80%;
+        height: auto;
     }
 }
+@media (max-width: 768px) {
 
-/* ------------------------ */
-/* RESPONSIVE CELULAR */
-/* ------------------------ */
-@media (max-width: 600px) {
-    .seguridad-items {
-        grid-template-columns: 1fr;
+    .beneficios-area {
+        padding: 40px 0;
     }
 
-    .seguridad-contenido h2 {
-        font-size: 28px;
+    .beneficios-titulo {
+        font-size: 42px;
     }
 
-    .intro {
+    .beneficios-subtitulo {
+        font-size: 20px;
+    }
+
+    /* CENTRAR EL CÍRCULO CORRECTAMENTE */
+    .beneficios-circulo {
+        margin: 0 auto;
+    }
+
+    /* Imagen se coloca debajo del círculo */
+    .beneficios-der {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .beneficios-der img {
+        width: 85%;
+        height: auto;
+    }
+}
+@media (max-width: 480px) {
+
+    /* Títulos */
+    .beneficios-titulo {
+        font-size: 34px;
+    }
+
+    .beneficios-subtitulo {
         font-size: 16px;
     }
 
-    .check {
-        font-size: 32px;
+    /* Margen inferior para que haya espacio y NO se corte */
+    .beneficios-circulo {
+        margin-top: 20px;
+        margin-bottom: 40px;
+        transform: scale(0.85); /* Reduce un 15% pero mantiene proporciones */
+        transform-origin: center;
+    }
+
+    .beneficios-boton {
+        font-size: 15px;
+        padding: 12px 20px;
+    }
+
+    .beneficios-der img {
+        width: 75%;
+        height: auto;
+    }
+
+    /* SECCIÓN SEGURIDAD */
+    .seguridad-section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .seguridad-contenido {
+        padding: 30px 25px;
+    }
+
+    .seguridad-items {
+        grid-template-columns: 1fr;
     }
 }
-.seguridad-section {
-    margin-bottom: 80px !important;
-}
-
 
 /*aqui inica la seccion de video que esta arriba del footer y footer*/
 .seccion-video {
