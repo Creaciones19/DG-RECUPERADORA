@@ -451,6 +451,73 @@ h1, h2 {
   border: none;
   cursor: pointer;
 }
+.btn-asesor {
+    display: block;       /* Para que margin auto funcione */
+    width: max-content;   /* Ajusta al tamaño del contenido */
+    margin: 0 auto;       /* Centra horizontalmente */
+    text-align: center;   /* Centra el texto dentro del botón */
+    padding: 10px 20px;   /* Espaciado interno */
+    background-color: #25D366; /* Color verde WhatsApp */
+    color: white;         /* Texto blanco */
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none; /* Quita subrayado */
+    border-radius: 5px;    /* Bordes redondeados */
+    transition: background 0.3s; /* Efecto al pasar el mouse */
+}
+
+.btn-asesor:hover {
+    background-color: #128C7E; /* Verde más oscuro al hover */
+}
+/* Tablets */
+@media (max-width: 1024px) {
+    .btn-asesor {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}
+
+/* Celulares */
+@media (max-width: 600px) {
+    .btn-asesor {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+}
+.esq-actions .btn-asesor {
+    display: block;       
+    width: max-content;   
+    margin: 0 auto;       
+    text-align: center;   
+    padding: 16px 32px;   /* MÁS grande */
+    background-color: #25D366; 
+    color: white;         
+    font-size: 20px;      /* MÁS grande */
+    font-weight: bold;
+    text-decoration: none; 
+    border-radius: 8px;    /* un poco más redondeado */
+    transition: background 0.3s; 
+}
+
+.esq-actions .btn-asesor:hover {
+    background-color: #128C7E; 
+}
+
+/* Tablets */
+@media (max-width: 1024px) {
+    .esq-actions .btn-asesor {
+        font-size: 18px;
+        padding: 14px 28px;
+    }
+}
+
+/* Celulares */
+@media (max-width: 600px) {
+    .esq-actions .btn-asesor {
+        font-size: 16px;
+        padding: 12px 24px;
+    }
+}
 
 /* ============================== */
 /*           RESPONSIVE           */
