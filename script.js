@@ -295,81 +295,63 @@ switch (document.body.dataset.portafolio) {
 
   case "hipotecaria":
    pasos = [
-  { 
-    num: "1", 
-    titulo: "Crédito para Comprar Casa", 
-    txt: "Te ayudamos a elegir el mejor crédito para adquirir tu casa nueva o usada y te acompañamos hasta la entrega de llaves." 
-  },
-  { 
-    num: "2", 
-    titulo: "Crédito para Construir Casa", 
-    txt: "Obtén financiamiento para construir tu vivienda; tu terreno queda como garantía hipotecaria." 
-  },
-  { 
-    num: "3", 
-    titulo: "Cambio de Hipoteca", 
-    txt: "Cambia tu hipoteca a otro banco con mejores condiciones y obtén ahorro en tu mensualidad." 
-  },
-  { 
-    num: "4", 
-    titulo: "Crédito para Comprar Terreno", 
-    txt: "Financia la compra de un terreno en zona urbanizada y construye con libertad según tus necesidades." 
-  },
-  { 
-    num: "5", 
-    titulo: "Crédito de Terreno y Construcción", 
-    txt: "Compra tu terreno y construye tu casa a medida; puedes obtener hasta el 100% del presupuesto de obra." 
-  },
-  { 
-    num: "6", 
-    titulo: "Crédito de Casa en Preventa", 
-    txt: "Adquiere una casa o departamento en preventa y obtén un mejor precio con crédito hipotecario." 
-  },
-  { 
-    num: "7", 
-    titulo: "Crédito de Liquidez", 
-    txt: "Recibe liquidez para invertir, cubrir emergencias o pagar deudas usando tu inmueble como garantía." 
-  },
-  { 
-    num: "8", 
-    titulo: "Crédito de Hipoteca y Liquidez", 
-    txt: "Cambia tu hipoteca a otro banco y recibe dinero adicional para usarlo en lo que necesites." 
-  },
-  { 
-    num: "9", 
-    titulo: "Crédito para Remodelar Casa", 
-    txt: "Mejora tu casa con un crédito de renovación o ampliación; obtén hasta el 70% del financiamiento." 
-  }
+  {
+  num: "1",
+  titulo: "Rendimiento Anual Garantizado",
+  txt: "Invierte tu capital y genera entre un 12% y 15% anual, con pago directo a tu cuenta al finalizar el periodo."
+},
+{
+  num: "2",
+  titulo: "Colocación en Remates Bancarios",
+  txt: "Tu inversión se integra en oportunidades de remates bancarios administradas por nuestro equipo, sin que tengas que gestionar trámites o procesos jurídicos."
+},
+{
+  num: "3",
+  titulo: "Gestión Profesional Completa",
+  txt: "Nos encargamos de toda la revisión jurídica, selección, administración y recuperación del capital durante todo el proceso."
+},
+{
+  num: "4",
+  titulo: "Respaldo Legal ante Notario",
+  txt: "Tu capital queda protegido mediante un Contrato Mutuo con Interés firmado ante fedatario público, garantizando seguridad jurídica."
+},
+{
+  num: "5",
+  titulo: "Renovación o Retiro Simple y Transparente",
+  txt: "Al finalizar el año, recibes tu capital más el rendimiento correspondiente directamente en tu cuenta bancaria. Puedes retirar el total o renovar tu inversión para continuar generando rendimientos."
+}
+
 ];
   break;
 
   case "seguros":
     pasos = [
-       { 
-      num: "1", 
-      titulo: "Analizamos tu perfil", 
-      txt: "Conocemos tus necesidades, situación actual y prioridades para identificar el tipo de seguro ideal para ti." 
-    },
-    { 
-      num: "2", 
-      titulo: "Seleccionamos la mejor póliza", 
-      txt: "Comparamos opciones y elegimos la cobertura que mejor protege a tu familia, bienes o salud." 
-    },
-    { 
-      num: "3", 
-      titulo: "Personalizamos tu cobertura", 
-      txt: "Ajustamos deducibles, sumas aseguradas y beneficios para que el seguro se adapte a tu presupuesto y estilo de vida." 
-    },
-    { 
-      num: "4", 
-      titulo: "Realizamos tu contratación", 
-      txt: "Gestionamos todo el proceso para activar tu póliza de forma rápida, segura y sin complicaciones." 
-    },
-    { 
-      num: "5", 
-      titulo: "Acompañamiento continuo", 
-      txt: "Te apoyamos en renovaciones, cambios y cualquier trámite o siniestro que puedas presentar durante tu cobertura." 
-    }
+      {
+  num: "1",
+  titulo: "Revisión de oportunidades reales",
+  txt: "Te mostramos propiedades de remate bancario verificadas y con expediente revisado, para que elijas opciones seguras y con claridad en su etapa jurídica."
+},
+{
+  num: "2",
+  titulo: "Análisis del expediente legal",
+  txt: "Evaluamos el estatus jurídico del inmueble, tiempos aproximados y viabilidad, brindándote información clara para que tomes una decisión segura."
+},
+{
+  num: "3",
+  titulo: "Proceso de compra transparente",
+  txt: "Una vez que eliges la propiedad, te guiamos en cada paso de la compra bajo un proceso formal, claro y totalmente documentado."
+},
+{
+  num: "4",
+  titulo: "Traslado de derechos",
+  txt: "Realizamos el proceso de traslado de derechos para que la propiedad quede formalmente a tu nombre dentro del proceso legal correspondiente."
+},
+{
+  num: "5",
+  titulo: "Acompañamiento hasta posesión y escrituración",
+  txt: "Si deseas continuar el proceso completo, contamos con especialistas que pueden gestionarlo por ti hasta lograr la posesión del inmueble y la posterior escrituración."
+}
+
     ];
   break;
 }
