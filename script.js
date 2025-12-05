@@ -410,11 +410,23 @@ document.getElementById("prev").addEventListener("click", () => {
 mostrarPaso();
 iniciarAuto();
 
-/*es lo que hace girar la rueda de index.html*/
-/* ============================
-   🔵 REMATES – CARRUSEL ROTATIVO
-   (misma estructura que "cómo funciona")
-=============================== */
-/* ============================
-   🔵 REMATES – CARRUSEL ROTATIVO
-=============================== */
+/*texto y video  de index.html al inicio*/
+// Asegura que el JS espere a que TODO cargue (HTML + imágenes + videos)
+window.addEventListener("load", () => {
+
+    const promo = document.querySelector(".promo-container");
+
+    // Si por alguna razón no existe, salimos
+    if (!promo) return;
+
+    // ENTRADA: video izquierda, texto derecha
+    promo.classList.add("init");
+
+    // CAMBIO SUAVE A LOS 3.5 SEGUNDOS
+    setTimeout(() => {
+        promo.classList.remove("init");
+        promo.classList.add("swap");
+    }, 3500);
+});
+
+

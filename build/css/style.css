@@ -270,12 +270,202 @@ header video {
     object-fit: cover;
     z-index: -1;
 }
+/*video de  entrada index html*/
 
-.header-content {
-    position: relative;
-    text-align: center;
-    color: black;
-    margin-top: 20vh;
+
+.promo-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+
+    max-width: 1200px;
+    margin: 60px auto 0 auto;
+    padding: 0 20px;
+
+    transition: all 1.2s ease;
+    flex-wrap: wrap; /* 🔹 IMPORTANTE para permitir que en móvil se acomode en columna */
+}
+
+/* ANIMACIONES */
+.promo-container .promo-text,
+.promo-container .promo-video {
+    transition:
+        opacity 0.9s ease,
+        transform 0.9s cubic-bezier(.25,.8,.25,1);
+}
+
+/* TEXTO */
+.promo-text {
+    flex: 1;
+    max-width: 520px;
+}
+
+.promo-text h2 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.promo-text p {
+    font-size: 20px;
+}
+
+.resaltar {
+    color: #002147 !important;
+    font-weight: bold;
+    display: block;
+    margin-top: 15px;
+}
+
+/* VIDEO */
+.promo-video {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.promo-video video {
+    width: 100%;
+    max-width: 550px;
+    border-radius: 12px;
+    display: block;
+}
+
+/* ESTADOS DE ANIMACIÓN */
+.promo-container.init {
+    flex-direction: row;
+}
+
+.promo-container.swap {
+    flex-direction: row-reverse;
+}
+
+.promo-container.swap .promo-text {
+    transform: translateX(20px);
+}
+
+.promo-container.swap .promo-video {
+    transform: translateX(-20px);
+}
+
+.promo-container.transitioning .promo-text,
+.promo-container.transitioning .promo-video {
+    opacity: 0;
+    transform: translateY(25px);
+}
+
+
+/* ============================================
+   📱 RESPONSIVE MOBILE/TABLET
+============================================ */
+@media (max-width: 992px) {
+
+    .promo-container {
+        flex-direction: column; /* 🔹 TEXTO ARRIBA – VIDEO ABAJO */
+        text-align: center;     /* 🔹 Centra el texto en móviles */
+        gap: 20px;
+    }
+
+    .promo-text {
+        max-width: 100%;
+    }
+
+    .promo-text h2 {
+        font-size: 34px; 
+    }
+
+    .promo-text p {
+        font-size: 18px;
+    }
+
+    /* Reseteo de animaciones en mobile para evitar movimientos raros */
+    .promo-container.init,
+    .promo-container.swap {
+        flex-direction: column !important;
+    }
+
+    .promo-container.swap .promo-text,
+    .promo-container.swap .promo-video {
+        transform: none !important;
+    }
+}
+
+
+/* Extra pequeño: teléfonos muy chicos */
+@media (min-width: 900px) {
+
+    /* Centra el bloque sin alterar el interior */
+    .promo-container {
+        max-width: 1100px;
+        margin: 0 auto;         /* centra el bloque */
+        gap: 40px;
+        padding: 0 20px;
+        justify-content: space-between; /* mantiene la alineación original */
+    }
+
+    /* Deja el texto igual que antes */
+    .promo-text {
+        max-width: 500px;
+        text-align: left;       /* asegura alineación original */
+    }
+
+    /* Centra SOLO el video en su espacio */
+    .promo-video {
+        display: flex;
+        justify-content: center; 
+    }
+
+    .promo-video video {
+        max-width: 480px;
+    }
+}
+
+/*texto abajo del video de html inicial*/
+/* ESTILOS GENERALES DEL TEXTO DESCRIPTIVO */
+.descriptivo {
+    max-width: 1100px;  
+    margin: 0 auto;    
+    padding: 0 20px;
+}
+
+.descriptivo p {
+    text-align: justify;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+/* ÚLTIMO PÁRRAFO RESALTADO */
+.resaltado-final strong {
+    color: #002147; /* azul marino */
+    font-weight: 700;
+}
+
+/* RESPONSIVE PARA TABLETS */
+@media (max-width: 1024px) {
+    .descriptivo p {
+        font-size: 18px;
+        line-height: 1.7;
+        margin-bottom: 18px;
+        padding: 0 10px;
+    }
+}
+
+/* RESPONSIVE PARA CELULARES */
+@media (max-width: 600px) {
+    .descriptivo p {
+        font-size: 16px;
+        line-height: 1.6;
+        margin-bottom: 16px;
+        padding: 0 12px;
+    }
+
+    .resaltado-final strong {
+        display: block;
+        font-size: 17px;
+        text-align: center;
+        margin-top: 10px;
+    }
 }
 
 h1, h2 {
