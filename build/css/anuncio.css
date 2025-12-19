@@ -130,12 +130,18 @@ h1 {
 }
 
 .resumen-propiedad {
-   background: linear-gradient(to bottom, #072050, #0A1A33);
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-    line-height: 1.8;
-    text-align: left; /* Alinea el texto a la izquierda */
+  background: linear-gradient(
+    to bottom,
+    #4e6586 0%,    /* azul acero ya oscuro (inicio) */
+    #1f3758 45%,   /* azul medio profundo */
+    #0f223e 70%,   /* transición muy oscura */
+    #020914 100%   /* azul casi negro final */
+  );
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  line-height: 1.8;
+  text-align: left;
 }
 
 /* -------------------------------------------------------------

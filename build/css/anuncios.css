@@ -13,9 +13,6 @@ body {
   color: #FFFFFF;
 }
 
-* {
-    font-size: inherit; /* Fuerza que todos los elementos hereden el tamaño del body */
-}
 
 
 /* Contenedor general */
