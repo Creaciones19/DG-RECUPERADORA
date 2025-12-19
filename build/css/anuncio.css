@@ -1,23 +1,4 @@
 
-body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    font-size: 18px;
-    background: linear-gradient(
-        to bottom,
-        #f5e9df 0%,   /* beige superior */
-        #7c004c 100%  /* vino oscuro inferior */
-    );
-    background-attachment: fixed;
-    background-size: cover;
-    color: #FFFFFF;
-}
-
-
-* {
-    font-size: inherit; /* Fuerza que todos los elementos hereden el tamaño del body */
-}
 
 
 
@@ -149,7 +130,7 @@ h1 {
 }
 
 .resumen-propiedad {
-    background: linear-gradient(to bottom, #d86ea3, #7c004c); /* Degradado magenta-vino */
+   background: linear-gradient(to bottom, #072050, #0A1A33);
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
@@ -166,7 +147,7 @@ h1 {
 
 .resumen-propiedad .precio {
     font-size: 2rem;
-    color: black; /* Amarillo para destacar */
+    color: white; /* Amarillo para destacar */
     margin-bottom: 20px;
     text-align: center;
 }
@@ -196,23 +177,6 @@ h1 {
     filter: invert(1) brightness(2); /* Convierte los íconos SVG a blanco */
 }
 
-.boton-azul-claro {
-    display: inline-block;
-    background-color: #c14882;
-    color: #ffffff;
-    padding: 10px 20px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: bold;
-    margin-top: 20px;
-    transition: background-color 0.3s ease;
-}
-
-.boton-azul-claro:hover {
-    background: linear-gradient(to right, #d86ea3, #7c004c); /* Degradado magenta elegante */
-    color: #ffffff;
-    transition: background 0.4s ease; /* Transición suave */
-}
 
 /* -------------------------------------------------------------
    🔹 Este bloque aplica un efecto degradado al pasar el cursor
@@ -608,18 +572,16 @@ body {
 
 
 body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    font-size: 18px;
-    background: linear-gradient(
-        to bottom,
-        #f5e9df 0%,   /* beige superior */
-        #7c004c 100%  /* vino oscuro inferior */
-    );
-    background-attachment: fixed;
-    background-size: cover;
-    color: #FFFFFF;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  font-size: 18px;
+  background: linear-gradient(
+    to bottom,
+    #f5e9df 95%,
+    #580939 100%
+  );
+  color: #FFFFFF;
 }
 
 /* -------------------------------------------------------------
@@ -637,7 +599,7 @@ h1 {
 /* 🔸 Estilo del botón principal */
 .boton-azul-claro {
     display: inline-block;
-    background: linear-gradient(to right, #d86ea3, #7c004c);
+    background: linear-gradient(to right, #62D86B, #1E88E5);
     color: #ffffff;
     padding: 10px 20px;
     border-radius: 5px;
@@ -647,29 +609,7 @@ h1 {
 }
 
 .boton-azul-claro:hover {
-    background: linear-gradient(to right, #7c004c, #d86ea3);
-}
-header .nav-container .desktop-nav a:hover {
-    background: linear-gradient(to bottom,
-        #7c004c 0%,    /* vino elegante arriba */
-        #9b5476 60%,   /* vino medio */
-        #d0cfd0 100%   /* gris metálico claro abajo */
-    ) !important;
-    color: #ffffff !important;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3) !important;
-    transform: translateY(-2px) !important;
-    transition: all 0.4s ease !important;
-}
-footer .navegacion a:hover {
-    background: linear-gradient(to bottom,
-        #7c004c 0%,    /* vino elegante arriba */
-        #9b5476 60%,   /* vino medio */
-        #d0cfd0 100%   /* gris metálico claro abajo */
-    ) !important;
-    color: #ffffff !important;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3) !important;
-    transform: translateY(-2px) !important;
-    transition: all 0.4s ease !important;
+    background: linear-gradient(to right, #62D86B, #1E88E5);
 }
 
 /* 🔹 Contenedor fijo de 2 columnas */

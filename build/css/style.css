@@ -1,17 +1,4 @@
 
-/* Ajustes generales */
-body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    font-size: 28px;
-    background: linear-gradient(to bottom, #ede2d8 85%, #051d40 100%);
-    background-size: cover;
-    color: #202122;
-}
-* {
-    font-size: inherit; /* Fuerza que todos los elementos hereden el tamaño del body */
-}
 
 h1 {
     font-family: 'Lobster', cursive;
@@ -271,6 +258,58 @@ header video {
     z-index: -1;
 }
 /*video de  entrada index html*/
+/* ==============================
+   BLOQUE Es el encabezado de la pagina de anuncios
+   ============================== */
+/* se le puso Bloque opciones (título centrado + botón abajo)pero es encabezado de  anuncios pagi */
+.opciones{
+  display: flex;
+  flex-direction: column;   /* 👈 clave: ya no van en fila */
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin: 30px auto;
+  max-width: 1100px;
+}
+
+/* Título */
+/* Título principal del bloque de opciones */
+.titulo-opciones{
+  font-family: 'Montserrat', Arial, sans-serif; /* 👈 fuente */
+  font-weight: 600;                              /* elegante, no pesado */
+  font-size: clamp(1.7rem, 3vw, 2.5rem);         /* responsive */
+  line-height: 1.3;                              /* aire */
+  letter-spacing: -0.3px;
+  text-align: center;
+  margin: 0 auto;
+  max-width: 1000px;
+  color: #000;
+}
+
+/* Botón */
+.boton-amarillo{
+  display: inline-block;
+  padding: 10px 18px;
+  font-size: 16px;
+  color: #2922ff;
+  text-decoration: none;
+  font-weight: 800;
+  border-radius: 8px;
+}
+
+/* 📱 Mobile: título arriba, botón abajo centrado */
+@media (max-width: 768px){
+  .opciones{
+    flex-direction: column;
+    text-align: center;
+  }
+  .titulo-opciones{
+    text-align: center;
+  }
+  .boton-amarillo{
+    margin-top: 8px;
+  }
+}
 
 
 .promo-container {
@@ -836,6 +875,85 @@ h1, h2 {
     }
 }
 
+/*aqui va la seccion de anuncios pagina en pestaña anuncios esta es toda la pagina anuncios*/
+/* ===============================
+   CONTENEDOR DE CARACTERÍSTICAS pagina anuncios
+   =============================== */
+
+
+.anuncio-caracteristicas {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  justify-items: center;
+  list-style: none;
+  padding: 10px 0;
+  margin: 12px 0 6px; /* 🔥 menos espacio para que el botón suba */
+  gap: 0;
+}
+
+.anuncio-caracteristicas li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.anuncio-icono {
+  width: 36px;
+  height: 36px;
+  margin-bottom: 6px;
+}
+
+.anuncio-caracteristicas li p {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 600;
+  color: #000;
+}
+
+/* ===============================
+   BOTÓN DEL ANUNCIO
+   =============================== */
+
+.boton-amarillo-block {
+  display: block;
+ margin: -6px auto 0; /* 🔥 esto lo sube */
+  padding: 12px 18px;
+  background: linear-gradient(to right,  #71d86b, #1585d8);
+  color: #000;
+  text-align: center;
+  border-radius: 10px;
+  font-weight: 700;
+  text-decoration: none;
+  width: fit-content;
+}
+
+/* ===============================
+   AJUSTE RESPONSIVE (CELULAR)
+   =============================== */
+
+@media (max-width: 480px) {
+  .anuncio-caracteristicas {
+    padding: 8px 0;
+    margin: 10px 0 4px; /* 🔥 aún más arriba en celular */
+  }
+
+  .anuncio-icono {
+    width: 30px;
+    height: 30px;
+  }
+
+  .anuncio-caracteristicas li p {
+    font-size: 14px;
+  }
+
+  .boton-amarillo-block {
+    width: 100%;
+    max-width: 260px;
+  }
+}
 
 /* Footer */
 
@@ -989,6 +1107,43 @@ h1, h2 {
         transform: translateY(-10px);
     }
 }
+@media (max-width: 768px){
+
+  /* 1) Compacta el formulario (por culpa de * { font-size: inherit }) */
+  .formulario{
+    font-size: 16px;
+    width: 100%;
+    padding: 0 12px;
+    box-sizing: border-box;
+  }
+
+  /* 2) Asegura que labels e inputs estén uno debajo del otro */
+  .formulario label{
+    display: block;
+    width: 100%;
+  }
+
+  .formulario input,
+  .formulario select,
+  .formulario textarea{
+    width: 100%;
+    max-width: 100%;
+    display: block;
+    box-sizing: border-box;
+  }
+
+  /* 3) Botones verdes: apilados y sin tamaño monstruoso */
+  input[type="submit"].boton-verde,
+  input[type="button"].boton-verde{
+    width: 100% !important;
+    max-width: 100% !important;
+    display: block !important;
+    margin: 8px 0 !important;
+    font-size: 14px !important;
+    padding: 10px 12px !important;
+    white-space: normal !important;
+  }
+}
 
 /* Botón flotante para llamadas */
 .llamar-float {
@@ -1056,15 +1211,16 @@ h1, h2 {
 
 /* 🎨 Fondo general y estilo base */
 body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    font-size: 18px; /* Tamaño uniforme para todo el texto */
-    background:
-        linear-gradient(to bottom, #f5e9df 95%, #580939 100%), /* beige → magenta */
-        url('../img/fondomagentabeige.svg') no-repeat center center fixed;
-    background-size: cover;
-    color: #FFFFFF;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  font-size: 18px;
+  background: linear-gradient(
+    to bottom,
+    #f5e9df 95%,
+    #580939 100%
+  );
+  color: #FFFFFF;
 }
 
 /* -------------------------------------------------------------
@@ -2435,43 +2591,64 @@ footer .correo {
 
 /* ===== ESPACIADO REAL Y SEGURO ENTRE TARJETAS ===== */
 
-/* separa cada tarjeta en TODAS las resoluciones */
-.inmuebles24 .flip-card {
-    margin: 20px !important;      /* separa entre tarjetas 👈 */
-    padding: 10px 0 !important;   /* da aire vertical */
-}
 
-/* separa las tarjetas cuando giran (espacio invisible alrededor) */
-.inmuebles24 .flip-card-inner {
-    padding: 10px !important;     /* evita que toquen al rotar */
-}
-
-/* evita que el giro empuje o aplaste la tarjeta */
+/* evita que el giro empuje o aplaste la tarjeta 
 .inmuebles24 .flip-card-front,
 .inmuebles24 .flip-card-back {
     box-sizing: border-box;
     padding: 15px !important;
+}*/
+/* ✅ Frente sin padding para no robarle altura a la imagen */
+.inmuebles24 .flip-card-front{
+  padding: 0;
+  box-sizing: border-box;
 }
+
+/* ✅ El texto de la cara frontal se controla aquí */
+.inmuebles24 .flip-card-front .info{
+  padding: 14px 12px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  height: calc(100% - 220px);
+  box-sizing: border-box;
+}
+
+.inmuebles24 .flip-card-front .info h3{
+  margin: 0 0 6px 0;
+  line-height: 1.2;
+}
+
+.inmuebles24 .flip-card-front .info p{
+  margin: 3px 0;
+}
+
+.inmuebles24 .flip-card-front .info h2{
+  margin-top: auto;
+  margin-bottom: 0;
+  line-height: 1;
+}
+
+/* ✅ La trasera sí necesita padding */
+.inmuebles24 .flip-card-back{
+  padding: 25px;
+  box-sizing: border-box;
+}
+
 @media (max-width: 768px) {
     .contenedor-inmuebles24 {
         place-items: center !important; /* <-- CENTRAR TODO */
     }
 }
-.inmuebles24 .flip-card-back p {
-    max-height: 4.8em;   /* Altura aproximada para 4 líneas */
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: block;
+.inmuebles24 .flip-card-back p{
+  max-height: none;
+  overflow: visible;
+  text-align: center;
+  line-height: 1.4;
+  margin: 0 auto;
+  padding: 0 5px;
 }
-/* TEXTO DEL LADO TRASERO — RESPONSIVE, CENTRADO Y SIN SCROLL */
-.inmuebles24 .flip-card-back p {
-    max-height: none !important;      /* deja crecer el texto SIN deformar */
-    overflow: visible !important;     /* elimina scroll */
-    text-align: center !important;    /* centra el texto SIEMPRE */
-    line-height: 1.4;
-    margin: 0 auto;
-    padding: 0 5px;
-}
+
 
 /* RESPONSIVE – AJUSTA SOLO ESPACIADO, NO ALTURA DE TARJETA */
 @media (max-width: 768px) {

@@ -1,19 +1,5 @@
 
 /* Ajustes generales */
-body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    font-size: 18px; /* Tamaño uniforme para todo el texto */
-    background: linear-gradient(to bottom, #ede2d8 85%, #051d40 100%);
-    background-size: cover;
-    color: #FFFFFF;
-}
-
-* {
-    font-size: inherit; /* Fuerza que todos los elementos hereden el tamaño del body */
-}
-
 
 
 /* Contenedor del nav en la parte inferior derecha */

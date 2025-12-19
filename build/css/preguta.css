@@ -1,18 +1,5 @@
 
 /* Ajustes generales */
-body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    font-size: 18px; /* Tamaño uniforme para todo el texto */
-    background: linear-gradient(to bottom, #ede2d8 85%, #051d40 100%);
-    background-size: cover;
-    color: black;
-}
-
-* {
-    font-size: inherit; /* Fuerza que todos los elementos hereden el tamaño del body */
-}
 
 
 
@@ -102,13 +89,6 @@ h1, h2 {
 }
 
 
-body {
-    font-family: Arial, sans-serif;
-    background: linear-gradient(to bottom, #ede2d8 85%, #051d40 100%);
-    color: #ffffff;
-    margin: 0;
-    padding: 0;
-}
 
 .contenedor-preguntas {
     display: flex;
@@ -148,32 +128,28 @@ h1 {
     transition: transform 0.3s ease-in-out;
 }
 
-.burbuja-pregunta.azul {
-    background: linear-gradient(180deg, #000000 0%, #4d4d4d 40%, #bfbfbf 100%);
-    color: #ffffff;
-    align-self: flex-start;
-    border: none;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-    transition: background 0.4s ease, transform 0.3s ease;
+.burbuja-pregunta.azul{
+  background-image: linear-gradient(180deg, #0a1a33 0%, #0d2b52 45%, #1f4b82 100%);
+  transition: transform .25s ease, box-shadow .25s ease;
 }
 
-.burbuja-pregunta.azul:hover {
-    background: linear-gradient(to bottom, 
-        #4d001f 0%,   /* vino oscuro arriba */
-        #a35d84 60%,  /* vino claro al centro */
-        #c0bfc0 100%  /* gris metálico suave abajo */
-    );
-    transform: scale(1.05);
+.burbuja-pregunta.azul:hover{
+  background-image: linear-gradient(180deg, #031022 0%, #072050 55%, #2f6fbf 100%);
+  transform: scale(1.05);
+  box-shadow: 0 8px 18px rgba(10, 26, 51, 0.45);
 }
+
 .burbuja-pregunta.blanca {
-    background-color: #ffffff;
+    background-color: #fbf9f7;   /* blanco cálido */
     color: #0d203b;
     align-self: flex-end;
 }
 
+/* hover general muy sutil */
 .burbuja-pregunta:hover {
-    transform: scale(1.05);
+    transform: scale(1.03);
 }
+
 
 .burbuja-pregunta:before {
     content: '';
@@ -223,20 +199,31 @@ h1 {
     color: #ffffff;
     font-size: 1.2rem;
     text-decoration: none;
-    padding: 10px 28px; /* 🔹 menos alto y ancho */
-    border-radius: 12px;
-    background: linear-gradient(135deg, #7c004c 0%, #a20066 100%);
-    box-shadow: 0 4px 12px rgba(162, 0, 102, 0.4);
+    padding: 10px 28px;
+    border-radius: 14px;
+
+    /* 🎨 Verde → Azul */
+    background: linear-gradient(
+        135deg,
+        #6fdc6f 0%,   /* verde */
+        #1fa2d6 100%  /* azul */
+    );
+
+    box-shadow: 0 4px 12px rgba(31, 162, 214, 0.45);
     border: none;
     transition: all 0.3s ease-in-out;
     cursor: pointer;
 }
 
-/* ✨ Efecto al pasar el mouse */
+/* ✨ Hover elegante */
 .contactanos a:hover {
-    background: linear-gradient(135deg, #a20066 0%, #7c004c 100%);
-    transform: scale(1.07);
-    box-shadow: 0 6px 16px rgba(162, 0, 102, 0.5);
+    background: linear-gradient(
+        135deg,
+        #1fa2d6 0%,   /* azul */
+        #6fdc6f 100%  /* verde */
+    );
+    transform: scale(1.06);
+    box-shadow: 0 6px 18px rgba(31, 162, 214, 0.6);
 }
 
 
@@ -473,15 +460,16 @@ h1 {
 
 /* 🎨 Fondo general y estilo base */
 body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    font-size: 18px; /* Tamaño uniforme para todo el texto */
-    background:
-        linear-gradient(to bottom, #f5e9df 95%, #580939 100%), /* beige → magenta */
-        url('../img/fondomagentabeige.svg') no-repeat center center fixed;
-    background-size: cover;
-    color: #FFFFFF;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  font-size: 18px;
+  background: linear-gradient(
+    to bottom,
+    #f5e9df 95%,
+    #580939 100%
+  );
+  color: #FFFFFF;
 }
 
 /* -------------------------------------------------------------

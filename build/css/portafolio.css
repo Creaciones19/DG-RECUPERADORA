@@ -1,13 +1,16 @@
 /* Ajustes generales */
 body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    font-size: 18px;
-    background: linear-gradient(to bottom, #f5e9df 95%, #580939 100%);
-    color: black;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  font-size: 18px;
+  background: linear-gradient(
+    to bottom,
+    #f5e9df 95%,
+    #580939 100%
+  );
+  color: #FFFFFF;
 }
-
 
 /* Contenedor del nav en la parte inferior derecha */
 .nav-container {
@@ -133,9 +136,11 @@ h1, h2 {
   font-weight: 800;
   letter-spacing: 0.5px;
   line-height: 1.1;
-  background: linear-gradient(90deg, #6dd66d, #0072ff);
-  -webkit-background-clip: text;
-  color: transparent;
+background: linear-gradient(90deg, #6dd66d, #0072ff);
+background-clip: text;          /* estándar */
+-webkit-background-clip: text;  /* compatibilidad */
+color: transparent;             /* necesario para que se vea el gradiente */
+
   animation: float 3s ease-in-out infinite;
   text-shadow: 0px 3px 6px rgba(0,0,0,0.12);
 }
@@ -588,9 +593,11 @@ h1, h2 {
   font-weight: 700;
   margin-bottom: 25px;
   text-align: center;
-  background: linear-gradient(90deg, #7ED957, #0A66C2);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+ background: linear-gradient(90deg, #7ED957, #0A66C2);
+background-clip: text;          /* estándar */
+-webkit-background-clip: text;  /* Chrome / Safari */
+-webkit-text-fill-color: transparent; /* Safari */
+color: transparent;             /* resto de navegadores */
   display: block;
 }
 
