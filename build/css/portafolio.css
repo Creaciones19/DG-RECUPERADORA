@@ -117,50 +117,6 @@ h1, h2 {
 /* 1️⃣ ENCABEZADO */
 .encabezado{
   display: grid;
-  grid-template-columns: 1.3fr 0.7fr; /* texto grande, cohete a la derecha */
-  align-items: center;
-  gap: 40px;
-  padding: 80px 5%;
-  overflow: hidden;
-}
-
-/* Contenedores animados */
-.encabezado-texto,
-.encabezado-img {
-  animation: subir 1.1s ease-out forwards;
-}
-
-/* ⏱️ Repetir animación cada 3s con “float” suave */
-.encabezado-texto h1 {
-  font-size: 3.8rem;   /* Antes 4.6rem → 🔥 más pequeño */         /* Tamaño estilo "Despégate del resto" */
-  font-weight: 800;
-  letter-spacing: 0.5px;
-  line-height: 1.1;
-background: linear-gradient(90deg, #6dd66d, #0072ff);
-background-clip: text;          /* estándar */
--webkit-background-clip: text;  /* compatibilidad */
-color: transparent;             /* necesario para que se vea el gradiente */
-
-  animation: float 3s ease-in-out infinite;
-  text-shadow: 0px 3px 6px rgba(0,0,0,0.12);
-}
-.subtitulo-encabezado {
- font-size: 3.2rem;   /* Antes 5rem → 🔥 más pequeño que el h1 */
-  margin-top: 20px;  
-  font-weight: 600;
-  color: #1f3b7c;
- 
-  line-height: 1.2;
-  max-width: 1100px; 
-  animation: float 3s ease-in-out infinite;  /* 🔥 Mismo movimiento que el H1 */
-}
-
-/* Imagen con pequeño movimiento también */
-/* =========================
-   ENCABEZADO (LAYOUT PRO)
-   ========================= */
-.encabezado{
-  display: grid;
   grid-template-columns: 1.25fr 0.75fr; /* texto grande / cohete derecha */
   align-items: center;
   gap: 40px;
@@ -195,6 +151,77 @@ color: transparent;             /* necesario para que se vea el gradiente */
 }
 
 /* =========================
+   EFECTO "SE ESCRIBE" (MULTILÍNEA, NO CAMBIA ACOMODO)
+   ========================= */
+.encabezado-texto h1,
+.subtitulo-encabezado{
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  clip-path: inset(0 100% 0 0);   /* oculto por la derecha */
+}
+
+/* H1 primero */
+.encabezado-texto h1{
+  animation: revelarTexto 1.2s ease-out forwards;
+}
+
+/* Subtítulo después */
+.subtitulo-encabezado{
+  animation: revelarTexto 0.9s ease-out forwards;
+  animation-delay: 1.25s;
+}
+
+/* Cursor */
+/* =========================
+   CURSOR DEL EFECTO ESCRITURA (COLORES CORRECTOS)
+   ========================= */
+
+.encabezado-texto h1::after{
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 3px;
+  height: 100%;
+  background: rgba(0,116,232,0.55); /* 🔵 azul como el H1 */
+  
+  animation: cursorBlink 0.6s steps(1) infinite,
+             cursorOff 0.01s linear forwards;
+  animation-delay: 0s, 1.15s;
+}
+/* ===== SOLO TAMAÑO DE LETRA ===== */
+.encabezado-texto h1{
+  font-size: 3.1rem;
+  color: #0074E8 ; /* 🔵 FIX DEFINITIVO */
+}
+
+.subtitulo-encabezado::after{
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 3px;
+  height: 100%;
+  background: rgba(7,28,59,0.35); /* ⚫ negro suave como el subtítulo */
+
+  animation: cursorBlink 0.6s steps(1) infinite,
+             cursorOff 0.01s linear forwards;
+  animation-delay: 1.25s, 2.10s;
+}
+
+
+@keyframes revelarTexto{
+  to { clip-path: inset(0 0 0 0); }
+}
+@keyframes cursorBlink{
+  50% { opacity: 0; }
+}
+@keyframes cursorOff{
+  to { opacity: 0; }
+}
+
+/* =========================
    RAYA ABAJO DEL TEXTO
    ========================= */
 .encabezado-raya{
@@ -215,38 +242,54 @@ color: transparent;             /* necesario para que se vea el gradiente */
 
 /* OJO: esta clase debe ir en tu HTML: class="cohete" */
 .cohete{
-  width: 760px;        /* tamaño del bloque */
+  width: 760px;
   max-width: 100%;
   height: auto;
 
-  /* 🔥 Zoom para que el dibujo se vea grande aunque el PNG tenga aire */
+  /* Zoom (aunque el PNG tenga aire) */
   transform: scale(1.55);
   transform-origin: right center;
 
-  /* animación sin usar transform (para no pisar el scale) */
-  animation: float-img 3s ease-in-out infinite;
+  /* movimiento del cohete */
+ animation:
+  despegar 1.4s cubic-bezier(.25,.9,.4,1.2) forwards,
+  float-img 3s ease-in-out infinite;
+animation-delay: 0s, 1.4s;
+
 }
 
 /* =========================
-   ANIMACIONES
+   ANIMACIÓN ENTRADA
    ========================= */
 @keyframes subir{
   from { opacity: 0; transform: translateY(60px); }
   to   { opacity: 1; transform: translateY(0); }
 }
 
-/* (tu flotación del texto queda igual) */
-@keyframes float{
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-  100% { transform: translateY(0); }
-}
-
-/* ✅ NO usamos transform aquí; usamos translate para no romper el scale */
+/* =========================
+   MOVIMIENTO COHETE (DESKTOP)
+   ========================= */
 @keyframes float-img{
   0%   { translate: 35px 5px; }
   50%  { translate: 35px 13px; }
   100% { translate: 35px 5px; }
+}
+/* 🚀 DESPEGUE REAL DEL COHETE */
+@keyframes despegar{
+  0%{
+    opacity: 0;
+    transform: scale(1.55) translateY(140px);
+  }
+  20%{
+    opacity: 1;
+    transform: scale(1.55) translateY(140px);
+  }
+  60%{
+    transform: scale(1.55) translateY(-10px);
+  }
+  100%{
+    transform: scale(1.55) translateY(22px);
+  }
 }
 
 /* =========================
@@ -270,11 +313,12 @@ color: transparent;             /* necesario para que se vea el gradiente */
     width: 100%;
   }
 
-.cohete{
-  width: min(680px, 96vw);   /* 🔥 más ancho */
-  transform: scale(1.55);   /* 🔥 más grande */
-  transform-origin: center;
-}
+  .cohete{
+    width: min(680px, 96vw);
+    transform: scale(1.55);
+    transform-origin: center;
+  }
+
   @keyframes float-img{
     0%   { translate: 0px 5px; }
     50%  { translate: 0px 13px; }
@@ -285,20 +329,17 @@ color: transparent;             /* necesario para que se vea el gradiente */
     font-size: 2.2rem;
   }
 }
+
 /* ✅ SOLO COMPUTADORA: bajar raya y cohete para que no se encimen */
 @media (min-width: 901px){
-
-  /* baja la raya */
   .encabezado-raya{
-    margin-top: 55px;     /* antes 35px */
+    margin-top: 55px;
   }
 
-  /* baja el cohete un poco */
   .cohete{
-    transform: scale(1.55) translateY(22px);  /* 🔥 baja 22px */
+    transform: scale(1.55) translateY(22px);
   }
 
-  /* y ajusta el movimiento para mantenerlo abajo */
   @keyframes float-img{
     0%   { translate: 35px 22px; }
     50%  { translate: 35px 32px; }
