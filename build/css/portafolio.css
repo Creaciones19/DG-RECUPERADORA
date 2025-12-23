@@ -117,66 +117,65 @@ h1, h2 {
 /* 1️⃣ ENCABEZADO */
 .encabezado{
   display: grid;
-  grid-template-columns: 1.25fr 0.75fr; /* texto grande / cohete derecha */
+  grid-template-columns: 1.25fr 0.75fr;
   align-items: center;
   gap: 40px;
   padding: 80px 5%;
-  overflow: hidden;
+  overflow: visible; /* 🔥 antes estaba hidden y por eso se cortaba */
 }
-
-/* Animación inicial (si la usas en texto/imagen) */
+/* Animación inicial */
 .encabezado-texto,
 .encabezado-img{
   animation: subir 1.1s ease-out forwards;
 }
 
-/* ===== SOLO TAMAÑO DE LETRA ===== */
+/* ===== TEXTO (DESKTOP + RESPONSIVE BIEN) ===== */
+.encabezado-texto{
+  max-width: 650px;
+}
+
 .encabezado-texto h1{
-  font-size: 3.1rem;
+  margin: 0 0 12px;
+  font-size: clamp(2.1rem, 3.4vw, 3.1rem);
+  line-height: 1.05;
+  color: #0074E8;
 }
 
 .subtitulo-encabezado{
-  font-size: 2.3rem;
+  margin: 0;
+  font-size: clamp(1.35rem, 2.2vw, 2.3rem);
+  line-height: 1.2;
+  max-width: 32ch;   /* ayuda a que se vea en 2 líneas bonito */
 }
 
-/* ===== SOLO TAMAÑO DE LETRA EN MÓVIL ===== */
-@media (max-width: 900px){
+/* ✅ en computadora: el H1 en UNA sola línea */
+@media (min-width: 901px){
   .encabezado-texto h1{
-    font-size: 2.4rem;
-  }
-
-  .subtitulo-encabezado{
-    font-size: 1.9rem;
+    white-space: nowrap;
   }
 }
 
 /* =========================
-   EFECTO "SE ESCRIBE" (MULTILÍNEA, NO CAMBIA ACOMODO)
+   EFECTO "SE ESCRIBE"
    ========================= */
 .encabezado-texto h1,
 .subtitulo-encabezado{
   position: relative;
   display: inline-block;
   overflow: hidden;
-  clip-path: inset(0 100% 0 0);   /* oculto por la derecha */
+  clip-path: inset(0 100% 0 0);
 }
 
-/* H1 primero */
 .encabezado-texto h1{
   animation: revelarTexto 1.2s ease-out forwards;
 }
 
-/* Subtítulo después */
 .subtitulo-encabezado{
   animation: revelarTexto 0.9s ease-out forwards;
   animation-delay: 1.25s;
 }
 
 /* Cursor */
-/* =========================
-   CURSOR DEL EFECTO ESCRITURA (COLORES CORRECTOS)
-   ========================= */
-
 .encabezado-texto h1::after{
   content: "";
   position: absolute;
@@ -184,16 +183,10 @@ h1, h2 {
   right: 0;
   width: 3px;
   height: 100%;
-  background: rgba(0,116,232,0.55); /* 🔵 azul como el H1 */
-  
+  background: rgba(0,116,232,0.55);
   animation: cursorBlink 0.6s steps(1) infinite,
              cursorOff 0.01s linear forwards;
   animation-delay: 0s, 1.15s;
-}
-/* ===== SOLO TAMAÑO DE LETRA ===== */
-.encabezado-texto h1{
-  font-size: 3.1rem;
-  color: #0074E8 ; /* 🔵 FIX DEFINITIVO */
 }
 
 .subtitulo-encabezado::after{
@@ -203,27 +196,17 @@ h1, h2 {
   right: 0;
   width: 3px;
   height: 100%;
-  background: rgba(7,28,59,0.35); /* ⚫ negro suave como el subtítulo */
-
+  background: rgba(7,28,59,0.35);
   animation: cursorBlink 0.6s steps(1) infinite,
              cursorOff 0.01s linear forwards;
   animation-delay: 1.25s, 2.10s;
 }
 
+@keyframes revelarTexto{ to { clip-path: inset(0 0 0 0); } }
+@keyframes cursorBlink{ 50% { opacity: 0; } }
+@keyframes cursorOff{ to { opacity: 0; } }
 
-@keyframes revelarTexto{
-  to { clip-path: inset(0 0 0 0); }
-}
-@keyframes cursorBlink{
-  50% { opacity: 0; }
-}
-@keyframes cursorOff{
-  to { opacity: 0; }
-}
-
-/* =========================
-   RAYA ABAJO DEL TEXTO
-   ========================= */
+/* Raya */
 .encabezado-raya{
   display: block;
   width: 92%;
@@ -231,123 +214,184 @@ h1, h2 {
   margin-top: 35px;
 }
 
-/* =========================
-   COHETE (MÁS GRANDE REAL)
-   ========================= */
+/* ===== COHETE ===== */
 .encabezado-img{
   display: flex;
   justify-content: flex-end;
   align-items: center;
 }
 
-/* OJO: esta clase debe ir en tu HTML: class="cohete" */
 .cohete{
-  width: 760px;
-  max-width: 100%;
+  width: min(900px, 48vw);
   height: auto;
 
-  /* Zoom (aunque el PNG tenga aire) */
-  transform: scale(1.55);
+  transform: scale(1.78);
   transform-origin: right center;
 
-  /* movimiento del cohete */
- animation:
-  despegar 1.4s cubic-bezier(.25,.9,.4,1.2) forwards,
-  float-img 3s ease-in-out infinite;
-animation-delay: 0s, 1.4s;
+  /* 🔥 AJUSTE: izquierda y arriba */
+ translate: -12px 22px;
 
+ /* ← un poco más a la izquierda */
+ 
+
+  animation:
+    despegar 1.4s cubic-bezier(.25,.9,.4,1.2) forwards,
+    float-img 3s ease-in-out infinite;
+  animation-delay: 0s, 1.4s;
 }
 
-/* =========================
-   ANIMACIÓN ENTRADA
-   ========================= */
+/* entrada general */
 @keyframes subir{
   from { opacity: 0; transform: translateY(60px); }
   to   { opacity: 1; transform: translateY(0); }
 }
 
-/* =========================
-   MOVIMIENTO COHETE (DESKTOP)
-   ========================= */
-@keyframes float-img{
-  0%   { translate: 35px 5px; }
-  50%  { translate: 35px 13px; }
-  100% { translate: 35px 5px; }
-}
-/* 🚀 DESPEGUE REAL DEL COHETE */
+/* 🚀 despegue usando translate (NO transform) */
 @keyframes despegar{
-  0%{
-    opacity: 0;
-    transform: scale(1.55) translateY(140px);
-  }
-  20%{
-    opacity: 1;
-    transform: scale(1.55) translateY(140px);
-  }
-  60%{
-    transform: scale(1.55) translateY(-10px);
-  }
-  100%{
-    transform: scale(1.55) translateY(22px);
-  }
+  0%   { opacity: 0; translate: 10px 150px; }
+  20%  { opacity: 1; translate: 10px 150px; }
+  60%  { translate: 10px -10px; }
+  100% { translate: 10px 6px; }
 }
 
+/* flotación desktop */
+@keyframes float-img{
+  0%   { translate: 10px 6px; }
+  50%  { translate: 10px 16px; }
+  100% { translate: 10px 6px; }
+}
 /* =========================
-   RESPONSIVE
+   RESPONSIVE (MÓVIL)
    ========================= */
 @media (max-width: 900px){
   .encabezado{
     grid-template-columns: 1fr;
     text-align: center;
+    justify-items: center;   /* ✅ centra en grid */
     padding: 60px 5%;
+    overflow: visible;
+  }
+
+  .encabezado-texto{
+    display: flex;
+    flex-direction: column;
+    align-items: center;     /* ✅ centra bloque texto */
+  }
+
+  .encabezado-texto h1,
+  .encabezado-texto p{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .encabezado-img{
     justify-content: center;
-    margin-top: 25px;
-  }
-
-  .encabezado-raya{
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
-  }
-
-  .cohete{
-    width: min(680px, 96vw);
-    transform: scale(1.55);
-    transform-origin: center;
-  }
-
-  @keyframes float-img{
-    0%   { translate: 0px 5px; }
-    50%  { translate: 0px 13px; }
-    100% { translate: 0px 5px; }
+    margin-top: 28px;
   }
 
   .subtitulo-encabezado{
-    font-size: 2.2rem;
-  }
-}
-
-/* ✅ SOLO COMPUTADORA: bajar raya y cohete para que no se encimen */
-@media (min-width: 901px){
-  .encabezado-raya{
-    margin-top: 55px;
+    max-width: 26ch;
+    margin-left: auto;
+    margin-right: auto;
   }
 
+  /* ✅ COHETE MÁS GRANDE EN MÓVIL */
   .cohete{
-    transform: scale(1.55) translateY(22px);
+    max-width: none;                 /* 🔑 que no lo limite */
+    width: min(1400px, 125vw);       /* 🔥 más grande real */
+    transform: scale(2.1);           /* 🔥 más grande */
+    transform-origin: center;
+    translate: 0px 30px;
+  }
+
+  /* animaciones en móvil */
+  @keyframes despegar{
+    0%   { opacity: 0; translate: 0px 160px; }
+    20%  { opacity: 1; translate: 0px 160px; }
+    60%  { translate: 0px -8px; }
+    100% { translate: 0px 30px; }
   }
 
   @keyframes float-img{
-    0%   { translate: 35px 22px; }
-    50%  { translate: 35px 32px; }
-    100% { translate: 35px 22px; }
+    0%   { translate: 0px 30px; }
+    50%  { translate: 0px 44px; }
+    100% { translate: 0px 30px; }
   }
 }
 
-/* ----------- salud----------- */
+/* =========================
+   TABLET (901–1100)
+   ========================= */
+@media (min-width: 901px) and (max-width: 1100px){
+  .encabezado{
+    grid-template-columns: 1fr;
+    text-align: center;
+    justify-items: center;   /* ✅ centra en grid */
+    padding: 70px 6%;
+    overflow: visible;
+  }
+
+  /* ✅ Textos centrados SOLO en tablet */
+  .encabezado-texto{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .encabezado-texto h1,
+  .encabezado-texto p{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* ✅ permitir salto en tablet para que no se desborde */
+  .encabezado-texto h1{
+    white-space: normal;
+    overflow-wrap: anywhere;
+    text-wrap: balance;
+  }
+
+  .encabezado-img{
+    margin-top: 34px;
+    justify-content: center;
+  }
+
+  /* ✅ COHETE MÁS GRANDE EN TABLET */
+  .cohete{
+    max-width: none;               /* 🔑 */
+    width: min(1500px, 120vw);     /* 🔥 grande */
+    transform: scale(2.0);         /* 🔥 grande */
+    transform-origin: center;
+    translate: 0px 26px;
+  }
+
+  /* animaciones en tablet */
+  @keyframes despegar{
+    0%   { opacity: 0; translate: 0px 170px; }
+    20%  { opacity: 1; translate: 0px 170px; }
+    60%  { translate: 0px -10px; }
+    100% { translate: 0px 26px; }
+  }
+
+  @keyframes float-img{
+    0%   { translate: 0px 26px; }
+    50%  { translate: 0px 42px; }
+    100% { translate: 0px 26px; }
+  }
+}
+
+/* =========================
+   DESKTOP GRANDE (1101+)
+   ========================= */
+@media (min-width: 1101px){
+  .encabezado-texto h1{
+    white-space: nowrap;
+  }
+}
+
+----------- salud----------- */
 .estilo-azul {
   padding: 100px 5%;
   display: flex;
