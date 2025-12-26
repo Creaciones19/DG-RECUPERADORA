@@ -35,6 +35,7 @@ h1:hover {
     25%, 75% { opacity: 0.5; }
 }
 
+
 /* Links dentro de .texto-entrada: azul marino siempre */
 .texto-entrada a {
     color: #001f3f !important; /* fuerza azul marino */
@@ -1273,6 +1274,29 @@ blockquote {
     background-color: #f5e9df; /* Opcional: fondo claro */
     border-left: 4px solid #7c004c; /* Opcional: línea lateral vino */
     padding: 10px 20px;
+}
+.btn-tarjeta{
+  display: inline-block;
+  margin-top: 14px;
+  padding: 12px 18px;
+
+  background-color: rgb(0, 98, 255); /* AZUL MARINO */
+  color: #ffffff;           /* TEXTO BLANCO */
+
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 12px;
+
+  transition: 
+    background-color .25s ease,
+    transform .2s ease,
+    box-shadow .2s ease;
+}
+
+.btn-tarjeta:hover{
+  background-color: #072050; /* marino un poco más claro */
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0,0,0,.25);
 }
 
 /* Centrado completo solo para la secciónde la pestaña de seguridad */
