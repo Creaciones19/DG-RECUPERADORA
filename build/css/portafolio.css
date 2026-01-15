@@ -148,11 +148,90 @@ h1, h2 {
   max-width: 32ch;   /* ayuda a que se vea en 2 líneas bonito */
 }
 
+/* ✅ en ncabezado lottie*/
+/* ===== ENCABEZADO SOLO PARA LOTTIE ===== */
+/* =========================
+   ENCABEZADO SOLO LOTTIE
+   ========================= */
+.encabezado-lottie-only{
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  align-items: center;
+  gap: 40px;
+  padding: 80px 5%;
+}
+
+/* =========================
+   TEXTO (DESKTOP)
+   ========================= */
+.encabezado-texto-lottie{
+  max-width: 650px;
+  margin-left: 120px;
+}
+
+/* H1 */
+.encabezado-texto-lottie h1{
+  margin-bottom: 16px;
+}
+
+/* Subtítulo */
+.encabezado-texto-lottie .subtitulo-encabezado{
+  max-width: 42ch;
+  margin-top: 0;
+}
+
+/* =========================
+   LOTTIE (DERECHA CONTROLADA)
+   ========================= */
+.encabezado-media-lottie{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.lottie-banco{
+  width: 100%;
+  max-width: 580px;   /* 🔥 un poco más grande */
+  height: 580px;      /* 🔥 proporcional */
+  transform: translateX(-90px);
+}
+
+/* =========================
+   TABLET Y MÓVIL
+   ========================= */
+@media (max-width: 900px){
+  .encabezado-lottie-only{
+    grid-template-columns: 1fr;
+    text-align: left;
+  }
+
+  .encabezado-texto-lottie{
+    margin-left: 0;
+  }
+
+  .encabezado-media-lottie{
+    justify-content: center;
+    margin-top: 40px;
+  }
+
+  .lottie-banco{
+    max-width: 280px;
+    height: 280px;
+    transform: none;
+  }
+}
+
 /* ✅ en computadora: el H1 en UNA sola línea */
 @media (min-width: 901px){
   .encabezado-texto h1{
     white-space: nowrap;
   }
+}
+/* 🎯 SOLO cuando el encabezado tenga LOTTIE */
+.encabezado .encabezado-img:has(.encabezado-lottie) {
+  display: flex;
+  justify-content: flex-end; /* derecha */
+  align-items: center;
 }
 
 /* =========================
